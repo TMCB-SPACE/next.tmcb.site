@@ -1,5 +1,7 @@
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 
+import ThemeToggle from './ThemeToggle'
+
 interface HeaderProps {
   centered?: boolean
   description?: any[]
@@ -24,6 +26,8 @@ export function Header(props: HeaderProps) {
           <CustomPortableText value={description} />
         </div>
       )}
+
+      <ThemeToggle />
     </div>
   )
 }

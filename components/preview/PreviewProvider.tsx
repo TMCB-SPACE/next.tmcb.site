@@ -1,6 +1,7 @@
 'use client'
 
 import dynamic from 'next/dynamic'
+import { ReactNode } from 'react'
 import { suspend } from 'suspend-react'
 
 const LiveQueryProvider = dynamic(() => import('next-sanity/preview'))
@@ -12,7 +13,7 @@ export default function PreviewProvider({
   children,
   token,
 }: {
-  children: React.ReactNode
+  children: ReactNode
   token: string
 }) {
   const { client } = suspend(() => import('lib/sanity.client'), [UniqueKey])

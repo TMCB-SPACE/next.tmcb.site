@@ -1,12 +1,12 @@
 import { TimelineItem } from 'components/shared/TimelineItem'
 import type { MilestoneItem } from 'types'
 
-interface TimelineItem {
+interface ITimelineItem {
   title: string
   milestones: MilestoneItem[]
 }
 
-export function TimelineSection({ timelines }: { timelines: TimelineItem[] }) {
+export function TimelineSection({ timelines }: { timelines: ITimelineItem[] }) {
   return (
     <div className="flex flex-col gap-4 pt-16 text-black md:flex-row">
       {timelines?.map((timeline, key) => {

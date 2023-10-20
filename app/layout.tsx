@@ -1,20 +1,23 @@
+'use client'
+
 import 'tailwindcss/tailwind.css'
 
-import { IBM_Plex_Mono, Inter, PT_Serif } from 'next/font/google'
+import { JetBrains_Mono, PT_Sans,Ubuntu } from 'next/font/google'
+import { ThemeProvider } from 'next-themes'
+import { ReactNode } from 'react'
 
-const serif = PT_Serif({
+const serif = Ubuntu({
   variable: '--font-serif',
   style: ['normal', 'italic'],
   subsets: ['latin'],
   weight: ['400', '700'],
 })
-const sans = Inter({
+const sans = PT_Sans({
   variable: '--font-sans',
   subsets: ['latin'],
-  // @todo: understand why extrabold (800) isn't being respected when explicitly specified in this weight array
-  // weight: ['500', '700', '800'],
+  weight: ['400', '700'],
 })
-const mono = IBM_Plex_Mono({
+const mono = JetBrains_Mono({
   variable: '--font-mono',
   subsets: ['latin'],
   weight: ['500', '700'],
@@ -23,14 +26,17 @@ const mono = IBM_Plex_Mono({
 export default async function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html
       lang="en"
       className={`${mono.variable} ${sans.variable} ${serif.variable}`}
+      suppressHydrationWarning
     >
-      <body>{children}</body>
+      <body className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-[100dvh]">
+        <ThemeProvider attribute="class">{children}</ThemeProvider>
+      </body>
     </html>
   )
 }

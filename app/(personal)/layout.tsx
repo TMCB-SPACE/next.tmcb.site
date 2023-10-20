@@ -6,7 +6,7 @@ import { PreviewBanner } from 'components/preview/PreviewBanner'
 import { token } from 'lib/sanity.fetch'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
-import { Suspense } from 'react'
+import { ReactNode,Suspense } from 'react'
 
 const PreviewProvider = dynamic(
   () => import('components/preview/PreviewProvider'),
@@ -15,12 +15,12 @@ const PreviewProvider = dynamic(
 export default async function IndexRoute({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   const isDraftMode = draftMode().isEnabled
 
   const layout = (
-    <div className="flex min-h-screen flex-col bg-white text-black">
+    <div className="flex min-h-screen flex-col">
       {isDraftMode && <PreviewBanner />}
       <Suspense>
         <Navbar />

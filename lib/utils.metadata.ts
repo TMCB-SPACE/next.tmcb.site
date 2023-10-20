@@ -26,6 +26,7 @@ export function defineMetadata({
     image && urlForImage(image)?.width(1200).height(627).fit('crop').url()
 
   return {
+    // metadataBase: process.env.NEXT_PUBLIC_METADATA_BASE,
     title: metaTitle || demo.title,
     themeColor: '#000',
     description,

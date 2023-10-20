@@ -1,4 +1,4 @@
-import {CubeIcon, ImageIcon} from '@sanity/icons'
+import { CubeIcon, ImageIcon } from '@sanity/icons'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 export default defineType({
