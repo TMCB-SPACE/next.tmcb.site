@@ -2,7 +2,7 @@
 
 import 'tailwindcss/tailwind.css'
 
-import { JetBrains_Mono, PT_Sans,Ubuntu } from 'next/font/google'
+import { JetBrains_Mono, PT_Sans, Ubuntu } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
 

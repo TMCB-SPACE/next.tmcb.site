@@ -6,7 +6,7 @@ import { PreviewBanner } from 'components/preview/PreviewBanner'
 import { token } from 'lib/sanity.fetch'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
-import { ReactNode,Suspense } from 'react'
+import { ReactNode, Suspense } from 'react'
 
 const PreviewProvider = dynamic(
   () => import('components/preview/PreviewProvider'),
