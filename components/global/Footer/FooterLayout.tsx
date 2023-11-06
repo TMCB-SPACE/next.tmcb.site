@@ -1,7 +1,7 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import Link from 'next/link'
-import type { footerItem, SettingsPayload } from 'types'
+import type { FooterItem, SettingsPayload } from 'types'
 
 import { resolveHref } from '../../../lib/sanity.links'
 
@@ -11,7 +11,7 @@ interface FooterProps {
 export default function Footer(props: FooterProps) {
   const { data } = props
   const footer = data?.footer || ([] as PortableTextBlock[])
-  const footerItems = data?.footerItems || ([] as footerItem[])
+  const footerItems = data?.footerItems || ([] as FooterItem[])
 
   return (
     <footer className="mt-4">

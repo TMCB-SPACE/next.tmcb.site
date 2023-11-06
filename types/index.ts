@@ -7,6 +7,12 @@ export interface MenuItem {
   title?: string
 }
 
+export interface FooterItem {
+  _type: string
+  slug?: string
+  title?: string
+}
+
 export interface MilestoneItem {
   description?: string
   duration?: {
@@ -62,6 +68,6 @@ export interface ProjectPayload {
 export interface SettingsPayload {
   menuItems?: MenuItem[]
   footer?: PortableTextBlock[]
-  footerItems?: MenuItem[]
+  footerItems?: FooterItem[]
   ogImage?: Image
 }

@@ -55,8 +55,13 @@ export const pagePaths = groq`
 
 export const settingsQuery = groq`
   *[_type == "settings"][0]{
-    footer,
     menuItems[]->{
+      _type,
+      "slug": slug.current,
+      title
+    },
+    footer,
+    footerItems[]->{
       _type,
       "slug": slug.current,
       title
