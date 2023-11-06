@@ -8,6 +8,7 @@ interface NavbarProps {
 export default function Navbar(props: NavbarProps) {
   const { data } = props
   const menuItems = data?.menuItems || ([] as MenuItem[])
+
   return (
     <div className="sticky top-0 z-10 flex flex-wrap items-center gap-x-5 bg-black/70 dark:bg-white/70 text-white/90 dark:text-black/90 px-4 py-4 backdrop-blur md:px-16 md:py-5 lg:px-32">
       {menuItems &&

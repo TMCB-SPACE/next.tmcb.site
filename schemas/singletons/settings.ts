@@ -35,7 +35,7 @@ export default defineType({
     defineField({
       name: 'footer',
       description:
-        'This is a block of text that will be displayed at the bottom of the page.',
+        'This is a block of text that will be displayed at the bottom of the page next to the footer.',
       title: 'Footer Info',
       type: 'array',
       of: [
@@ -61,6 +61,23 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'footerItems',
+      title: 'Footer Item list',
+      description: 'Links displayed on the footer of the site, middle column.',
+      type: 'array',
+      of: [
+        {
+          title: 'Reference',
+          type: 'reference',
+          to: [
+            {
+              type: 'page',
+            },
+          ],
+        },
+      ],
+    }),
+    defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       type: 'image',
@@ -73,7 +90,7 @@ export default defineType({
   preview: {
     prepare() {
       return {
-        title: 'Menu Items',
+        title: 'Global Settings',
       }
     },
   },

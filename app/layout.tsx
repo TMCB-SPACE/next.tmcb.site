@@ -34,7 +34,7 @@ export default async function RootLayout({
       className={`${mono.variable} ${sans.variable} ${serif.variable}`}
       suppressHydrationWarning
     >
-      <body className="bg-gray-100 dark:bg-gray-900 text-black dark:text-white min-h-[100dvh]">
+      <body className="bg-gray-100 dark:bg-stone-900 text-black dark:text-stone-100 min-h-[100dvh]">
         <ThemeProvider attribute="class">{children}</ThemeProvider>
       </body>
     </html>
