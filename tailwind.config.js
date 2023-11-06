@@ -12,7 +12,7 @@ module.exports = {
         sans: 'var(--font-sans)',
         serif: 'var(--font-serif)',
       },
-    }
+    },
   },
   plugins: [require('@tailwindcss/typography')],
   darkMode: 'class',

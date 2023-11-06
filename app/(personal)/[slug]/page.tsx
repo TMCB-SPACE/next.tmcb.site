@@ -1,12 +1,7 @@
 import { toPlainText } from '@portabletext/react'
 import { Page } from 'components/pages/page/Page'
 import PagePreview from 'components/pages/page/PagePreview'
-import {
-  getHomePageTitle,
-  getPageBySlug,
-  getPagesPaths,
-  getSettings,
-} from 'lib/sanity.fetch'
+import { getHomePageTitle, getPageBySlug, getPagesPaths, getSettings } from 'lib/sanity.fetch'
 import { pagesBySlugQuery } from 'lib/sanity.queries'
 import { defineMetadata } from 'lib/utils.metadata'
 import { Metadata } from 'next'
@@ -23,11 +18,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params
 
-  const [settings, page, homePageTitle] = await Promise.all([
-    getSettings(),
-    getPageBySlug(slug),
-    getHomePageTitle(),
-  ])
+  const [settings, page, homePageTitle] = await Promise.all([getSettings(), getPageBySlug(slug), getHomePageTitle()])
 
   return defineMetadata({
     baseTitle: homePageTitle ?? undefined,

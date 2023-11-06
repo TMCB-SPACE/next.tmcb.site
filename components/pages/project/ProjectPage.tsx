@@ -10,16 +10,7 @@ export interface ProjectPageProps {
 
 export function ProjectPage({ data }: ProjectPageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const {
-    client,
-    coverImage,
-    description,
-    duration,
-    overview,
-    site,
-    tags,
-    title,
-  } = data ?? {}
+  const { client, coverImage, description, duration, overview, site, tags, title } = data ?? {}
 
   const startYear = new Date(duration?.start!).getFullYear()
   const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
@@ -32,11 +23,7 @@ export function ProjectPage({ data }: ProjectPageProps) {
 
         <div className="rounded-md border">
           {/* Image  */}
-          <ImageBox
-            image={coverImage}
-            alt={`Cover image for ${title}`}
-            classesWrapper="relative aspect-[16/9]"
-          />
+          <ImageBox image={coverImage} alt={`Cover image for ${title}`} classesWrapper="relative aspect-[16/9]" />
 
           <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
             {/* Duration */}
@@ -60,11 +47,7 @@ export function ProjectPage({ data }: ProjectPageProps) {
               <div className="p-3 lg:p-4">
                 <div className="text-xs md:text-sm">Site</div>
                 {site && (
-                  <Link
-                    target="_blank"
-                    className="text-md break-words md:text-lg"
-                    href={site}
-                  >
+                  <Link target="_blank" className="text-md break-words md:text-lg" href={site}>
                     {site}
                   </Link>
                 )}
@@ -87,10 +70,7 @@ export function ProjectPage({ data }: ProjectPageProps) {
 
         {/* Description */}
         {description && (
-          <CustomPortableText
-            paragraphClasses="font-serif max-w-3xl text-xl text-gray-600"
-            value={description}
-          />
+          <CustomPortableText paragraphClasses="font-serif max-w-3xl text-xl text-gray-600" value={description} />
         )}
       </div>
       <div className="absolute left-0 w-screen border-t" />

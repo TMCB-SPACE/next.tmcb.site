@@ -28,10 +28,7 @@ export default async function IndexRoute() {
     return (
       <div className="text-center">
         You don&rsquo;t have a homepage document yet,{' '}
-        <Link
-          href="/studio/desk/home%7C%2Cview%3Dpreview"
-          className="underline"
-        >
+        <Link href="/studio/desk/home%7C%2Cview%3Dpreview" className="underline">
           create one now
         </Link>
         !
@@ -40,12 +37,7 @@ export default async function IndexRoute() {
   }
 
   return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={homePageQuery}
-      initialData={data}
-      as={HomePagePreview}
-    >
+    <LiveQuery enabled={draftMode().isEnabled} query={homePageQuery} initialData={data} as={HomePagePreview}>
       <HomePage data={data} />
     </LiveQuery>
   )

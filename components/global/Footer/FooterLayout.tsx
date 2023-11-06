@@ -1,8 +1,9 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
-import type { footerItem, SettingsPayload } from 'types'
-import { resolveHref } from '../../../lib/sanity.links'
 import Link from 'next/link'
+import type { footerItem, SettingsPayload } from 'types'
+
+import { resolveHref } from '../../../lib/sanity.links'
 
 interface FooterProps {
   data: SettingsPayload
@@ -16,59 +17,48 @@ export default function Footer(props: FooterProps) {
     <footer className="mt-4">
       <div className="bg-gray-100 dark:bg-stone-700">
         <div className="container px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg-py-8 mx-auto">
-        <div className="flex flex-row flex-wrap">
-          <div className="basis-1/2 text-left flex px-2">
-            <a href="#" className="inline-flex flex-row">
-              <img src="/logo-animated.gif" alt="Logo" className="w-32 h-32" />
-            </a>
-            <div className="inline-flex flex-row flex-1 p-2">
-              {footer && (
-                <CustomPortableText
-                  paragraphClasses="text-md"
-                  value={footer}
-                />
+          <div className="flex flex-row flex-wrap">
+            <div className="basis-1/2 text-left flex px-2">
+              <a href="#" className="inline-flex flex-row">
+                <img src="/logo-animated.gif" alt="Logo" className="w-32 h-32" />
+              </a>
+              <div className="inline-flex flex-row flex-1 p-2">
+                {footer && <CustomPortableText paragraphClasses="text-md" value={footer} />}
+              </div>
+            </div>
+            <div className="basis-1/4">
+              <h3 className="font-bold">Company</h3>
+              {footerItems && (
+                <ul className="flex flex-wrap m-0">
+                  {footerItems.map((footerItem, key) => {
+                    const href = resolveHref(footerItem?._type, footerItem?.slug)
+                    if (!href) {
+                      return null
+                    }
+                    return (
+                      <li className="w-full" key={key}>
+                        <Link
+                          className={`inline-block hover:text-sky-700 dark:hover:text-sky-300 font-bold ${
+                            footerItem?._type === 'home' ? 'font-extrabold' : ''
+                          }`}
+                          href={href}
+                        >
+                          {footerItem.title}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
               )}
             </div>
+            <div className="basis-1/4">
+              <h3 className="font-bold">Social links</h3>
+            </div>
           </div>
-          <div className="basis-1/4">
-            <h3 className="font-bold">
-              Company
-            </h3>
-            {footerItems && (
-            <ul className="flex flex-wrap m-0">
-              {footerItems.map((footerItem, key) => {
-                  const href = resolveHref(footerItem?._type, footerItem?.slug)
-                  if (!href) {
-                    return null
-                  }
-                  return (
-                    <li className="w-full" key={key}>
-                      <Link
-                        className={`inline-block hover:text-sky-700 dark:hover:text-sky-300 font-bold ${
-                          footerItem?._type === 'home' ? 'font-extrabold' : ''
-                        }`}
-                        href={href}
-                      >
-                        {footerItem.title}
-                      </Link>
-                    </li>
-                  )
-                })}
-            </ul>
-              )}
-          </div>
-          <div className="basis-1/4">
-            <h3 className="font-bold">
-              Social links
-            </h3>
-          </div>
-        </div>
         </div>
       </div>
       <div className="text-center py-4 sm:py-6 lg-py-8">
-        <p className="text-md">
-          &copy; 2023 {process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE}. All rights reserved.
-        </p>
+        <p className="text-md">&copy; 2023 {process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE}. All rights reserved.</p>
       </div>
     </footer>
   )

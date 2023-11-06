@@ -11,11 +11,7 @@ const HomePage = dynamic(() => import('./HomePage'))
 
 export default function HomePagePreview({ data }: HomePageProps) {
   if (!data) {
-    return (
-      <div className="text-center">
-        Please start editing your Home document to see the preview!
-      </div>
-    )
+    return <div className="text-center">Please start editing your Home document to see the preview!</div>
   }
 
   return <HomePage data={data} />

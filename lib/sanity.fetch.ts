@@ -12,12 +12,7 @@ import {
   settingsQuery,
 } from 'lib/sanity.queries'
 import { draftMode } from 'next/headers'
-import type {
-  HomePagePayload,
-  PagePayload,
-  ProjectPayload,
-  SettingsPayload,
-} from 'types'
+import type { HomePagePayload, PagePayload, ProjectPayload, SettingsPayload } from 'types'
 
 import { revalidateSecret } from './sanity.api'
 
@@ -37,16 +32,11 @@ export async function sanityFetch<QueryResponse>({
 }): Promise<QueryResponse> {
   const isDraftMode = draftMode().isEnabled
   if (isDraftMode && !token) {
-    throw new Error(
-      'The `SANITY_API_READ_TOKEN` environment variable is required.',
-    )
+    throw new Error('The `SANITY_API_READ_TOKEN` environment variable is required.')
   }
 
   // @TODO this won't be necessary after https://github.com/sanity-io/client/pull/299 lands
-  const sanityClient =
-    client.config().useCdn && isDraftMode
-      ? client.withConfig({ useCdn: false })
-      : client
+  const sanityClient = client.config().useCdn && isDraftMode ? client.withConfig({ useCdn: false }) : client
   return sanityClient.fetch<QueryResponse>(query, params, {
     // We only cache if there's a revalidation webhook setup
     cache: revalidateSecret ? 'force-cache' : 'no-store',
@@ -100,16 +90,8 @@ export function getHomePageTitle() {
 }
 
 export function getPagesPaths() {
-  return client.fetch<string[]>(
-    pagePaths,
-    {},
-    { token, perspective: 'published' },
-  )
+  return client.fetch<string[]>(pagePaths, {}, { token, perspective: 'published' })
 }
 export function getProjectsPaths() {
-  return client.fetch<string[]>(
-    projectPaths,
-    {},
-    { token, perspective: 'published' },
-  )
+  return client.fetch<string[]>(projectPaths, {}, { token, perspective: 'published' })
 }

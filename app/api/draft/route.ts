@@ -15,30 +15,21 @@ export async function GET(request: Request) {
   const documentType = searchParams.get('type')
 
   if (!token) {
-    throw new Error(
-      'The `SANITY_API_READ_TOKEN` environment variable is required.',
-    )
+    throw new Error('The `SANITY_API_READ_TOKEN` environment variable is required.')
   }
   if (!secret) {
     return new Response('Invalid secret', { status: 401 })
   }
 
   const authenticatedClient = client.withConfig({ token })
-  const validSecret = await isValidSecret(
-    authenticatedClient,
-    previewSecretId,
-    secret,
-  )
+  const validSecret = await isValidSecret(authenticatedClient, previewSecretId, secret)
   if (!validSecret) {
     return new Response('Invalid secret', { status: 401 })
   }
 
   const href = resolveHref(documentType!, slug!)
   if (!href) {
-    return new Response(
-      'Unable to resolve preview URL based on the current document type and slug',
-      { status: 400 },
-    )
+    return new Response('Unable to resolve preview URL based on the current document type and slug', { status: 400 })
   }
 
   draftMode().enable()

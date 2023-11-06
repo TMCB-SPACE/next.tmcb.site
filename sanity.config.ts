@@ -8,10 +8,7 @@ import { pageStructure, singletonPlugin } from 'plugins/settings'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
-import Iframe, {
-  defineUrlResolver,
-  IframeOptions,
-} from 'sanity-plugin-iframe-pane'
+import Iframe, { defineUrlResolver, IframeOptions } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
 import page from 'schemas/documents/page'
 import project from 'schemas/documents/project'
@@ -22,15 +19,9 @@ import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
 
-const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-  'Next.js Personal Website with Sanity.io'
+const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Personal Website with Sanity.io'
 
-export const PREVIEWABLE_DOCUMENT_TYPES = [
-  home.name,
-  page.name,
-  project.name,
-] satisfies string[]
+export const PREVIEWABLE_DOCUMENT_TYPES = [home.name, page.name, project.name] satisfies string[]
 
 export const PREVIEWABLE_DOCUMENT_TYPES_REQUIRING_SLUGS = [
   page.name,

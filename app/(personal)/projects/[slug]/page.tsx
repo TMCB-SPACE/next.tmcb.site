@@ -1,11 +1,7 @@
 import { toPlainText } from '@portabletext/react'
 import { ProjectPage } from 'components/pages/project/ProjectPage'
 import ProjectPreview from 'components/pages/project/ProjectPreview'
-import {
-  getHomePageTitle,
-  getProjectBySlug,
-  getProjectsPaths,
-} from 'lib/sanity.fetch'
+import { getHomePageTitle, getProjectBySlug, getProjectsPaths } from 'lib/sanity.fetch'
 import { projectBySlugQuery } from 'lib/sanity.queries'
 import { defineMetadata } from 'lib/utils.metadata'
 import { Metadata } from 'next'
@@ -22,10 +18,7 @@ type Props = {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = params
 
-  const [homePageTitle, project] = await Promise.all([
-    getHomePageTitle(),
-    getProjectBySlug(slug),
-  ])
+  const [homePageTitle, project] = await Promise.all([getHomePageTitle(), getProjectBySlug(slug)])
 
   return defineMetadata({
     baseTitle: homePageTitle ?? undefined,

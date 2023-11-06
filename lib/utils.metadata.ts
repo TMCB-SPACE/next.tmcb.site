@@ -17,13 +17,9 @@ export function defineMetadata({
   image?: Image
   title?: string
 }) {
-  const metaTitle = [
-    ...(title ? [title] : []),
-    ...(baseTitle ? [baseTitle] : []),
-  ].join(' | ')
+  const metaTitle = [...(title ? [title] : []), ...(baseTitle ? [baseTitle] : [])].join(' | ')
 
-  const imageUrl =
-    image && urlForImage(image)?.width(1200).height(627).fit('crop').url()
+  const imageUrl = image && urlForImage(image)?.width(1200).height(627).fit('crop').url()
 
   return {
     // metadataBase: process.env.NEXT_PUBLIC_METADATA_BASE,

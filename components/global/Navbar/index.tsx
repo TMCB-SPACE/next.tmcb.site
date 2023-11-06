@@ -10,12 +10,7 @@ export async function Navbar() {
   const data = await getSettings()
 
   return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={settingsQuery}
-      initialData={data}
-      as={NavbarPreview}
-    >
+    <LiveQuery enabled={draftMode().isEnabled} query={settingsQuery} initialData={data} as={NavbarPreview}>
       <NavbarLayout data={data} />
     </LiveQuery>
   )

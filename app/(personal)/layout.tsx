@@ -8,15 +8,9 @@ import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 import { ReactNode, Suspense } from 'react'
 
-const PreviewProvider = dynamic(
-  () => import('components/preview/PreviewProvider'),
-)
+const PreviewProvider = dynamic(() => import('components/preview/PreviewProvider'))
 
-export default async function IndexRoute({
-  children,
-}: {
-  children: ReactNode
-}) {
+export default async function IndexRoute({ children }: { children: ReactNode }) {
   const isDraftMode = draftMode().isEnabled
 
   const layout = (

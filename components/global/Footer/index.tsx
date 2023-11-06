@@ -10,12 +10,7 @@ export async function Footer() {
   const data = await getSettings()
 
   return (
-    <LiveQuery
-      enabled={draftMode().isEnabled}
-      query={settingsQuery}
-      initialData={data}
-      as={FooterPreview}
-    >
+    <LiveQuery enabled={draftMode().isEnabled} query={settingsQuery} initialData={data} as={FooterPreview}>
       <FooterLayout data={data} />
     </LiveQuery>
   )
