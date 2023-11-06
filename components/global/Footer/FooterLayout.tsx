@@ -1,6 +1,8 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
-import type { MenuItem, SettingsPayload } from 'types'
+import type { footerItem, SettingsPayload } from 'types'
+import { resolveHref } from '../../../lib/sanity.links'
+import Link from 'next/link'
 
 interface FooterProps {
   data: SettingsPayload
@@ -8,9 +10,7 @@ interface FooterProps {
 export default function Footer(props: FooterProps) {
   const { data } = props
   const footer = data?.footer || ([] as PortableTextBlock[])
-  // const footerItems = data?.footerItems || ([] as MenuItem[])
-
-  // console.log(data);
+  const footerItems = data?.footerItems || ([] as footerItem[])
 
   return (
     <footer className="mt-4">
@@ -34,32 +34,28 @@ export default function Footer(props: FooterProps) {
             <h3 className="font-bold">
               Company
             </h3>
+            {footerItems && (
             <ul className="flex flex-wrap m-0">
-              <li className="w-full">
-                <a
-                  href="#"
-                  className="inline-block block hover:text-sky-700 dark:hover:text-sky-300 font-bold"
-                >
-                  Terms and Conditions
-                </a>
-              </li>
-              <li className="w-full">
-                <a
-                  href="#"
-                  className="inline-block block hover:text-sky-700 dark:hover:text-sky-300 font-bold"
-                >
-                  Legal
-                </a>
-              </li>
-              <li className="w-full">
-                <a
-                  href="#"
-                  className="inline-block block hover:text-sky-700 dark:hover:text-sky-300 font-bold"
-                >
-                  Privacy Policy
-                </a>
-              </li>
+              {footerItems.map((footerItem, key) => {
+                  const href = resolveHref(footerItem?._type, footerItem?.slug)
+                  if (!href) {
+                    return null
+                  }
+                  return (
+                    <li className="w-full" key={key}>
+                      <Link
+                        className={`inline-block hover:text-sky-700 dark:hover:text-sky-300 font-bold ${
+                          footerItem?._type === 'home' ? 'font-extrabold' : ''
+                        }`}
+                        href={href}
+                      >
+                        {footerItem.title}
+                      </Link>
+                    </li>
+                  )
+                })}
             </ul>
+              )}
           </div>
           <div className="basis-1/4">
             <h3 className="font-bold">
