@@ -77,6 +77,18 @@ export default defineType({
       ],
     }),
     defineField({
+      name: 'socialLinks',
+      title: 'Footer Social Links',
+      description: 'Links displayed on the footer of the site, right column.',
+      type: 'array',
+      of: [
+        {
+          type: 'socialLink',
+        },
+      ],
+      validation: (rule) => rule.unique(),
+    }),
+    defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       type: 'image',

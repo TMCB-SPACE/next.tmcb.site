@@ -10,14 +10,16 @@ import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
 import Iframe, { defineUrlResolver, IframeOptions } from 'sanity-plugin-iframe-pane'
 import { previewUrl } from 'sanity-plugin-iframe-pane/preview-url'
+import {iconify} from 'sanity-plugin-iconify'
 import page from 'schemas/documents/page'
-import project from 'schemas/documents/project'
 import post from 'schemas/documents/post'
+import project from 'schemas/documents/project'
 import duration from 'schemas/objects/duration'
 import milestone from 'schemas/objects/milestone'
 import timeline from 'schemas/objects/timeline'
 import home from 'schemas/singletons/home'
 import settings from 'schemas/singletons/settings'
+import socialLink from './schemas/objects/socialLink'
 
 const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Personal Website with Sanity.io'
 
@@ -60,12 +62,13 @@ export default defineConfig({
       // Objects
       milestone,
       timeline,
+      socialLink,
     ],
   },
   plugins: [
     deskTool({
       structure: pageStructure([home, settings]),
-      // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
+      // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       // You can add any React component to `S.view.component` and it will be rendered in the pane
       // and have access to content in the form in real-time.
       // It's part of the Studio's “Structure Builder API” and is documented here:
@@ -97,5 +100,9 @@ export default defineConfig({
     // Vision lets you query your content with GROQ in the studio
     // https://www.sanity.io/docs/the-vision-plugin
     visionTool({ defaultApiVersion: apiVersion }),
+    iconify({
+      collections: [],
+      showName: true,
+    }),
   ],
 })
