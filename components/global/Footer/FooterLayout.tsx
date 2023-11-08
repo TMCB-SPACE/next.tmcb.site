@@ -1,7 +1,10 @@
+'use client'
+
+import { Icon } from '@iconify-icon/react'
 import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import Link from 'next/link'
-import type { FooterItem, SettingsPayload } from 'types'
+import type { FooterItem, SettingsPayload, SocialLink } from 'types'
 
 import { resolveHref } from '../../../lib/sanity.links'
 
@@ -12,6 +15,7 @@ export default function Footer(props: FooterProps) {
   const { data } = props
   const footer = data?.footer || ([] as PortableTextBlock[])
   const footerItems = data?.footerItems || ([] as FooterItem[])
+  const socialLinks = data?.socialLinks || ([] as SocialLink[])
 
   return (
     <footer className="mt-4">
@@ -53,6 +57,26 @@ export default function Footer(props: FooterProps) {
             </div>
             <div className="basis-1/4">
               <h3 className="font-bold">Social links</h3>
+              {socialLinks && (
+                <ul className="flex flex-wrap m-0">
+                  {socialLinks.map((socialLink, key) => {
+                    return (
+                      <li className="w-full" key={key}>
+                        <a
+                          className='inline-block hover:text-sky-700 dark:hover:text-sky-300 font-bold text-md'
+                          href={socialLink.url}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          title={socialLink.tooltip ?? socialLink.title}
+                        >
+                          <Icon icon={socialLink.icon ?? 'uil:'} className="text-xl align-text-top mr-1"/>
+                          {socialLink.title ?? socialLink.tooltip ?? socialLink.url}
+                        </a>
+                      </li>
+                    )
+                  })}
+                </ul>
+              )}
             </div>
           </div>
         </div>

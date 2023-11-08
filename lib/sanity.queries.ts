@@ -66,6 +66,13 @@ export const settingsQuery = groq`
       "slug": slug.current,
       title
     },
+    socialLinks[]{
+      _type,
+      title,
+      url,
+      tooltip,
+      "icon": icon.name
+    },
     ogImage,
   }
 `

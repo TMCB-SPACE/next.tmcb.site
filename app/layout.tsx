@@ -23,7 +23,7 @@ const mono = JetBrains_Mono({
   weight: ['500', '700'],
 })
 
-export default async function RootLayout({ children }: { children: ReactNode }) {
+export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${mono.variable} ${sans.variable} ${serif.variable}`} suppressHydrationWarning>
       <body className="bg-gray-100 dark:bg-stone-900 text-black dark:text-stone-100 min-h-[100dvh]">

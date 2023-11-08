@@ -7,6 +7,13 @@ export default defineType({
   type: 'object',
   fields: [
     defineField({
+      name: 'title',
+      description: 'Social link human readable title',
+      title: 'Title',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       type: 'string',
       name: 'tooltip',
       title: 'Tooltip',
@@ -25,14 +32,15 @@ export default defineType({
   ],
   preview: {
     select: {
+      title: 'title',
       tooltip: 'tooltip',
       url: 'url',
       icon: 'icon.name',
     },
-    prepare({ tooltip, url, icon }) {
+    prepare({ title, tooltip, url, icon }) {
       return {
+        title: `${title}${tooltip ? ` (${tooltip})` : ''}`,
         subtitle: url,
-        title: tooltip,
         media: IconPreview({ icon }),
       }
     },

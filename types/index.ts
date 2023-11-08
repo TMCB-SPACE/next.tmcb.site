@@ -13,6 +13,14 @@ export interface FooterItem {
   title?: string
 }
 
+export interface SocialLink {
+  _type: string
+  title: string
+  url: string
+  tooltip?: string
+  icon?: string
+}
+
 export interface MilestoneItem {
   description?: string
   duration?: {
@@ -69,5 +77,6 @@ export interface SettingsPayload {
   menuItems?: MenuItem[]
   footer?: PortableTextBlock[]
   footerItems?: FooterItem[]
+  socialLinks?: SocialLink[]
   ogImage?: Image
 }
