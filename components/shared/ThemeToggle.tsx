@@ -1,21 +1,17 @@
 'use client'
 
 import { useTheme } from 'next-themes'
+import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 function ThemeToggle() {
   const { theme, setTheme } = useTheme()
 
   return (
-    <>
-      <button
-        className="px-4 py-2 text-white dark:text-black bg-black dark:bg-white font-semibold rounded-md"
-        onClick={() => {
-          setTheme(theme === 'light' ? 'dark' : 'light')
-        }}
-      >
-        Change Theme
-      </button>
-    </>
+    <DarkModeSwitch
+      checked={theme === 'dark'}
+      onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      size={24}
+    />
   )
 }
 
