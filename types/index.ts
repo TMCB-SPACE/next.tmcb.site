@@ -75,6 +75,9 @@ export interface ProjectPayload {
 
 export interface SettingsPayload {
   menuItems?: MenuItem[]
+  home: HomePagePayload & {
+    _type: string
+  }
   footer?: PortableTextBlock[]
   footerItems?: FooterItem[]
   socialLinks?: SocialLink[]

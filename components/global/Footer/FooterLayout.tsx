@@ -3,6 +3,7 @@
 import { Icon } from '@iconify-icon/react'
 import type { PortableTextBlock } from '@portabletext/types'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
+import Image from 'next/image'
 import Link from 'next/link'
 import type { FooterItem, SettingsPayload, SocialLink } from 'types'
 
@@ -16,6 +17,7 @@ export default function Footer(props: FooterProps) {
   const footer = data?.footer || ([] as PortableTextBlock[])
   const footerItems = data?.footerItems || ([] as FooterItem[])
   const socialLinks = data?.socialLinks || ([] as SocialLink[])
+  const home = data?.home
 
   return (
     <footer className="mt-4">
@@ -23,9 +25,14 @@ export default function Footer(props: FooterProps) {
         <div className="container px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg-py-8 mx-auto">
           <div className="flex flex-row flex-wrap">
             <div className="basis-1/2 text-left flex px-2">
-              <a href="#" className="inline-flex flex-row">
-                <img src="/logo-animated.gif" alt="Logo" className="w-32 h-32" />
-              </a>
+              <Link href={resolveHref(home?._type) ?? '/'} className="inline-flex flex-row">
+                <Image
+                  width={128}
+                  height={128}
+                  src={'/logo-animated.gif'}
+                  alt={`Logo`}
+                  className="w-32 h-32"/>
+              </Link>
               <div className="inline-flex flex-row flex-1 p-2">
                 {footer && <CustomPortableText paragraphClasses="text-md" value={footer} />}
               </div>

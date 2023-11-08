@@ -60,6 +60,10 @@ export const settingsQuery = groq`
       "slug": slug.current,
       title
     },
+    "home": *[_type == "home"][0]{
+      _type,
+      title
+    },
     footer,
     footerItems[]->{
       _type,
