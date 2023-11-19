@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.0...v1.0.1) (2023-11-19)
+
+
+### 🐛 Bug Fixes
+
+* correct SSR rendering of theme toggle ([ddcd131](https://github.com/TMCB-SPACE/next.tmcb.space/commit/ddcd1310488cac92ae0103bc29652478fd32b2cd))
+
 ## 1.0.0 (2023-11-19)
 
 
