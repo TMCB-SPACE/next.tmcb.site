@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.1...v1.0.2) (2023-11-20)
+
+
+### 🧑‍💻 Code Refactoring
+
+* implement system theme ([6811f31](https://github.com/TMCB-SPACE/next.tmcb.space/commit/6811f31dfafa71ba8b8e1bfb8d2f13a3368d7fca))
+
 ## [1.0.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.0...v1.0.1) (2023-11-19)
 
 
