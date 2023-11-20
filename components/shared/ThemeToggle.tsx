@@ -6,7 +6,7 @@ import { DarkModeSwitch } from 'react-toggle-dark-mode';
 
 function ThemeToggle() {
   const [mounted, setMounted] = useState(false)
-  const { theme, setTheme } = useTheme()
+  const { resolvedTheme, setTheme } = useTheme()
 
   useEffect(() => {
     setMounted(true)
@@ -18,8 +18,8 @@ function ThemeToggle() {
 
   return (
     <DarkModeSwitch
-      checked={theme === 'dark'}
-      onChange={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+      checked={resolvedTheme === 'dark'}
+      onChange={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
       size={24}
     />
   )
