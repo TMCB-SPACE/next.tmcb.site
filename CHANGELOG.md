@@ -5,6 +5,14 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.7](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.6...v1.0.7) (2023-11-20)
+
+
+### 🐛 Bug Fixes
+
+* correct github actions build cache ([8e8c36e](https://github.com/TMCB-SPACE/next.tmcb.space/commit/8e8c36e2f0cdeb17e30824ca75c0a9f45e55a578))
+* correct text color and absolute border on generic page ([7410cbd](https://github.com/TMCB-SPACE/next.tmcb.space/commit/7410cbd102713af01c8cb4304f3babe5c4af0e27))
+
 ## [1.0.6](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.5...v1.0.6) (2023-11-20)
 
 
