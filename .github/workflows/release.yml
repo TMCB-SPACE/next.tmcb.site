@@ -19,11 +19,13 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       DEPLOY_ENVIRONMENT: ${{ steps.env.outputs.DEPLOY_ENVIRONMENT }}
+      VERCEL_ENVIRONMENT: ${{ steps.env.outputs.VERCEL_ENVIRONMENT }}
     steps:
       - name: "☁️ compute environment variables"
         id: env
         run: |
           echo "DEPLOY_ENVIRONMENT=$([[ ${{ github.ref_name }} == 'main' ]] && echo 'production' || echo ${{ github.ref_name }})" >> $GITHUB_OUTPUT
+          echo "VERCEL_ENVIRONMENT=$([[ ${{ github.ref_name }} == 'main' ]] && echo 'production' || echo 'preview')" >> $GITHUB_OUTPUT
 
   test:
     name: Test and lint
@@ -62,6 +64,37 @@ jobs:
         uses: tmcb-space/release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  deploy:
+    name: Deploy to Vercel
+    needs:
+      - release
+    runs-on: ubuntu-latest
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+    steps:
+      - name: "☁️ checkout repository"
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: "🔧 setup node"
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: "🔧 install npm@latest vercel@canary"
+        run: npm i -g npm@latest vercel@canary
+
+      - name: Pull Vercel Environment Information
+        run: npx vercel pull --yes --environment=${{ needs.setup.outputs.VERCEL_ENVIRONMENT }} --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Build Project Artifacts
+        run: npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project Artifacts to Vercel
+        run: npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
   cleanup:
     name: Cleanup actions
