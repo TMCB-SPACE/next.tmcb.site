@@ -78,8 +78,8 @@ jobs:
     steps:
       - name: "☁️ checkout repository"
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
+#        with:
+#          fetch-depth: 0
 
       - name: "🔧 setup node"
         uses: actions/setup-node@v4
@@ -91,6 +91,9 @@ jobs:
 
       - name: "📦 Pull Vercel Environment Information"
         run: npx vercel pull --yes --environment=${{ needs.setup.outputs.VERCEL_ENVIRONMENT }} --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: "📦 Pull Vercel Build Environment"
+        run: npx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: "📂 Build Project Artifacts"
         run: npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
