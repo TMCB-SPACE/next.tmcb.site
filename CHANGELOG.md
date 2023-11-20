@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.5](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.4...v1.0.5) (2023-11-20)
+
+
+### 🔁 Continuous Integration
+
+* correct vercel build environment variables ([d4c21d6](https://github.com/TMCB-SPACE/next.tmcb.space/commit/d4c21d63e6ce73b4d586d2621d4b11da3f14bfec))
+
 ## [1.0.4](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.3...v1.0.4) (2023-11-20)
 
 
