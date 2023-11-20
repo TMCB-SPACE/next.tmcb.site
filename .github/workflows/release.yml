@@ -66,6 +66,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
+    environment:
+      name: ${{ needs.setup.outputs.DEPLOY_ENVIRONMENT }}
     name: Deploy to Vercel
     needs:
       - release
@@ -87,13 +89,13 @@ jobs:
       - name: "🔧 install npm@latest vercel@canary"
         run: npm i -g npm@latest vercel@canary
 
-      - name: Pull Vercel Environment Information
+      - name: "📦 Pull Vercel Environment Information"
         run: npx vercel pull --yes --environment=${{ needs.setup.outputs.VERCEL_ENVIRONMENT }} --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Build Project Artifacts
+      - name: "📂 Build Project Artifacts"
         run: npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
 
-      - name: Deploy Project Artifacts to Vercel
+      - name: "🚀 Deploy Project Artifacts to Vercel"
         run: npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
 
   cleanup:
