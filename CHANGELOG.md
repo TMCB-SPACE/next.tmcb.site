@@ -5,6 +5,18 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.2...v1.0.3) (2023-11-20)
+
+
+### 🐛 Bug Fixes
+
+* remove hydration warning ([3a9b178](https://github.com/TMCB-SPACE/next.tmcb.space/commit/3a9b178031e13e73479d5673779bbbf27091e99d))
+
+
+### 🔁 Continuous Integration
+
+* build and deploy using vercel as post-release step ([60b225c](https://github.com/TMCB-SPACE/next.tmcb.space/commit/60b225c9fa855308d71fda406e5a23c498b32fb5))
+
 ## [1.0.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.1...v1.0.2) (2023-11-20)
 
 
