@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.6](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.5...v1.0.6) (2023-11-20)
+
+
+### 🐛 Bug Fixes
+
+* integrate latest release message into vercel deploy step ([52e1db8](https://github.com/TMCB-SPACE/next.tmcb.space/commit/52e1db8a4bf386523364cc406462f6cf7b58e32f))
+
 ## [1.0.5](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.4...v1.0.5) (2023-11-20)
 
 
