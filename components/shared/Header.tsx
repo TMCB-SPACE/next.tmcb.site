@@ -1,5 +1,5 @@
-import { CustomPortableText } from 'components/shared/CustomPortableText'
 import { clsx } from 'clsx'
+import { CustomPortableText } from 'components/shared/CustomPortableText'
 
 interface HeaderProps {
   centered?: boolean
