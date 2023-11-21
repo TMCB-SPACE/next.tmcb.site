@@ -63,7 +63,7 @@ export default function Footer(props: FooterProps) {
               'dark:border-black'
             ])}>
               <h3 className={clsx([
-                'font-extrabold p-6',
+                'font-extrabold font-mono p-6',
               ])}>Company</h3>
               {footerItems && (
                 <ul className='flex flex-wrap m-0'>
@@ -97,7 +97,7 @@ export default function Footer(props: FooterProps) {
               'dark:border-black'
             ])}>
               <h3 className={clsx([
-                'font-extrabold p-6',
+                'font-extrabold font-mono p-6',
               ])}>Social links</h3>
               {socialLinks && (
                 <ul className='flex flex-wrap m-0'>
@@ -138,7 +138,7 @@ export default function Footer(props: FooterProps) {
           'bg-gray-100/90 border-slate-500',
           'dark:bg-neutral-800/90 dark:border-black',
         ])}>
-          <p className="p-8 m-auto text-lg">&copy; 2023 {process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE}. All rights reserved.</p>
+          <p className="p-8 m-auto font-mono text-md">&copy; 2023 {process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE}. All rights reserved.</p>
         </div>
       </div>
     </footer>

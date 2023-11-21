@@ -15,10 +15,8 @@ export function Page({ data }: PageProps) {
     <div className={clsx([
       'p-8'
     ])}>
-      {/* Header */}
       <Header title={title} description={overview} />
 
-      {/* Body */}
       <div className={clsx([
         'w-5/6 lg:w-4/6'
       ])}>
