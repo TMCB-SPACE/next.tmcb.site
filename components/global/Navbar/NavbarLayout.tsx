@@ -1,9 +1,9 @@
+import { clsx } from 'clsx'
 import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
 import type { SettingsPayload } from 'types'
 
 import ThemeToggle from '../../shared/ThemeToggle'
-import { clsx } from 'clsx'
 
 interface NavbarProps {
   data: SettingsPayload
@@ -23,8 +23,8 @@ export default function Navbar(props: NavbarProps) {
       <div className={clsx([
           'col-start-2 col-end-12 text-2xl',
           'flex justify-between items-center backdrop-blur border-x',
-          'bg-gray-100/90 border-slate-500',
-          'dark:bg-neutral-800/90 dark:border-black',
+          'border-slate-500',
+          'dark:border-black',
         ])}>
         {home && (
           <Link
@@ -50,7 +50,7 @@ export default function Navbar(props: NavbarProps) {
               <li key={key}>
                 <Link
                   className={clsx([
-                    'font-extrabold p-6 border-l inline-block',
+                    'p-6 border-l inline-block',
                     'border-slate-500 hover:bg-white',
                     'dark:border-black dark:hover:bg-black',
                   ])}
