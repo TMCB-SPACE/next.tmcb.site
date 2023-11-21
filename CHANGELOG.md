@@ -5,6 +5,18 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.0-beta.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.9-beta.3...v1.1.0-beta.1) (2023-11-21)
+
+
+### 🍕 Features
+
+* add proper styling for homepage projects ([51c0758](https://github.com/TMCB-SPACE/next.tmcb.space/commit/51c07589426d69cb0c919a89cd89ef8c96670f7f))
+
+
+### 🐛 Bug Fixes
+
+* correct header fonts everywhere ([728eecf](https://github.com/TMCB-SPACE/next.tmcb.space/commit/728eecf5ac3720c810a0f02445448641b6fd0c54))
+
 ## [1.0.9-beta.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.9-beta.2...v1.0.9-beta.3) (2023-11-21)
 
 
