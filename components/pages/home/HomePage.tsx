@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import { ProjectListItem } from 'components/pages/home/ProjectListItem'
 import { Header } from 'components/shared/Header'
 import { resolveHref } from 'lib/sanity.links'
@@ -13,19 +14,22 @@ export function HomePage({ data }: HomePageProps) {
   const { overview = [], showcaseProjects = [], title = '' } = data ?? {}
 
   return (
-    <div className="space-y-20">
-      {/* Header */}
+    <div className={clsx([
+      'p-0'
+    ])}>
       {title && <Header centered title={title} description={overview} />}
-      {/* Showcase projects */}
+
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="mx-auto max-w-[100rem] rounded-md border">
+        <div className="mx-auto max-w-[100rem] grid grid-cols-2 flex-wrap gap-6 py-6">
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project._type, project.slug)
             if (!href) {
               return null
             }
             return (
-              <Link key={key} href={href}>
+              <Link key={key} href={href} className={clsx([
+                'block'
+              ])}>
                 <ProjectListItem project={project} odd={key % 2} />
               </Link>
             )

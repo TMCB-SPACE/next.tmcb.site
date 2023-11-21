@@ -20,7 +20,7 @@ function ThemeToggle() {
     <DarkModeSwitch
       checked={resolvedTheme === 'dark'}
       onChange={() => setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')}
-      size={24}
+      size={32}
     />
   )
 }

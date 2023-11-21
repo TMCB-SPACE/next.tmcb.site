@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
 import type { SettingsPayload } from 'types'
@@ -14,40 +15,61 @@ export default function Navbar(props: NavbarProps) {
   const home = data?.home;
 
   return (
-    <div className="sticky top-0 z-10 flex justify-between items-center bg-gray-100/90 dark:bg-stone-700/90 px-4 py-4 backdrop-blur md:px-16 md:py-5 lg:px-32">
-      {home && (
-        <Link
-          key={'homepage-nav-link'}
-          className={`text-lg md:text-xl hover:text-sky-700 dark:hover:text-sky-300 font-extrabold`}
-          href={resolveHref(home?._type) ?? '/'}
-        >
-          {home.title}
-        </Link>
-      )}
+    <div className={clsx([
+      'sticky top-0 z-10 border-y grid grid-cols-12',
+      'bg-gray-100/90 border-slate-500',
+      'dark:bg-neutral-800/90 dark:border-black',
+    ])}>
+      <div className={clsx([
+          'col-start-2 col-end-12 text-2xl',
+          'flex justify-between items-center backdrop-blur border-x',
+          'border-slate-500',
+          'dark:border-black',
+        ])}>
+        {home && (
+          <Link
+            key={'homepage-nav-link'}
+            className={clsx([
+              'font-extrabold p-6 border-r',
+              'border-slate-500 hover:bg-white',
+              'dark:border-black dark:hover:bg-black',
+            ])}
+            href={resolveHref(home?._type) ?? '/'}
+          >
+            {home.title}
+          </Link>
+        )}
 
-      <ul className="list-none flex items-center gap-x-4">
-        {menuItems && menuItems.length > 0 && menuItems.map((menuItem, key) => {
-          const href = resolveHref(menuItem?._type, menuItem?.slug)
-          if (!href) {
-            return null
-          }
-          return (
-            <li key={key}>
-              <Link
-                className={`text-lg md:text-xl hover:text-sky-700 dark:hover:text-sky-300 ${
-                  menuItem?._type === 'home' ? 'font-extrabold' : ''
-                }`}
-                href={href}
-              >
-                {menuItem.title}
-              </Link>
-            </li>
-          )
-        })}
-        <li>
-          <ThemeToggle />
-        </li>
-      </ul>
+        <ul className="list-none flex items-center gap-x-0">
+          {menuItems && menuItems.length > 0 && menuItems.map((menuItem, key) => {
+            const href = resolveHref(menuItem?._type, menuItem?.slug)
+            if (!href) {
+              return null
+            }
+            return (
+              <li key={key}>
+                <Link
+                  className={clsx([
+                    'p-6 border-l inline-block underline-offset-2 hover:underline',
+                    'border-slate-500 hover:bg-white',
+                    'dark:border-black dark:hover:bg-black',
+                  ])}
+                  href={href}
+                >
+                  {menuItem.title}
+                </Link>
+              </li>
+            )
+          })}
+          <li className={clsx([
+            'font-extrabold p-6 border-l',
+            'border-slate-500 hover:bg-white',
+            'dark:border-black dark:hover:bg-black',
+          ])}>
+            <ThemeToggle />
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
