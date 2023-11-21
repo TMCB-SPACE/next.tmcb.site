@@ -27,7 +27,7 @@ jobs:
         run: |
           echo "DEPLOY_ENVIRONMENT=$([[ ${{ github.ref_name }} == 'main' ]] && echo 'production' || echo ${{ github.ref_name }})" >> $GITHUB_OUTPUT
           echo "VERCEL_ENVIRONMENT=$([[ ${{ github.ref_name }} == 'main' ]] && echo 'production' || echo 'preview')" >> $GITHUB_OUTPUT
-          echo "VERCEL_COMMAND=$([[ ${{ github.ref_name }} == 'main' ]] && echo '--prod' || echo '')" >> $GITHUB_OUTPUT
+          echo "VERCEL_COMMAND=$([[ ${{ github.ref_name }} == 'main' ]] && echo "--prod" || echo '')" >> $GITHUB_OUTPUT
 
   test:
     name: Test and lint
@@ -72,6 +72,7 @@ jobs:
       name: ${{ needs.setup.outputs.DEPLOY_ENVIRONMENT }}
     name: Deploy to Vercel
     needs:
+      - setup
       - release
     runs-on: ubuntu-latest
     env:
@@ -98,12 +99,12 @@ jobs:
         run: npx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: "📂 Build Project Artifacts"
-        run: npx vercel build $(echo ${{ needs.setup.outputs.VERCEL_COMMAND }}) --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel build ${{ needs.setup.outputs.VERCEL_COMMAND }} --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: "🚀 Deploy Project Artifacts to Vercel"
         run: |
           echo ${{ needs.setup.outputs.VERCEL_COMMAND }}
-          npx vercel deploy --prebuilt $(echo ${{ needs.setup.outputs.VERCEL_COMMAND }}) --token=${{ secrets.VERCEL_TOKEN }}
+          npx vercel deploy --prebuilt ${{ needs.setup.outputs.VERCEL_COMMAND }} --token=${{ secrets.VERCEL_TOKEN }}
 
   cleanup:
     name: Cleanup actions
