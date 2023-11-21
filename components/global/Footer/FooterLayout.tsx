@@ -22,7 +22,7 @@ export default function Footer(props: FooterProps) {
 
   return (
     <footer className={clsx([
-      'mt-4 border-t',
+      'border-t',
       'bg-gray-100/90 border-slate-500',
       'dark:bg-neutral-800/90 dark:border-black',
     ])}>

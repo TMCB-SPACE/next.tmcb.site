@@ -1,3 +1,4 @@
+import { clsx } from 'clsx'
 import { CustomPortableText } from 'components/shared/CustomPortableText'
 import { Header } from 'components/shared/Header'
 import type { PagePayload } from 'types'
@@ -11,13 +12,17 @@ export function Page({ data }: PageProps) {
   const { body, overview, title } = data ?? {}
 
   return (
-    <div>
-      <div className="mb-14">
-        {/* Header */}
-        <Header title={title} description={overview} />
+    <div className={clsx([
+      'p-8'
+    ])}>
+      {/* Header */}
+      <Header title={title} description={overview} />
 
-        {/* Body */}
-        {body && <CustomPortableText paragraphClasses="font-serif max-w-3xl text-xl" value={body} />}
+      {/* Body */}
+      <div className={clsx([
+        'w-5/6 lg:w-4/6'
+      ])}>
+        {body && <CustomPortableText paragraphClasses="font-serif text-xl" value={body} />}
       </div>
     </div>
   )

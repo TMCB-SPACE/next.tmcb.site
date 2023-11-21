@@ -1,5 +1,6 @@
 import 'styles/index.css'
 
+import { clsx } from 'clsx'
 import { Footer } from 'components/global/Footer'
 import { Navbar } from 'components/global/Navbar'
 import { PreviewBanner } from 'components/preview/PreviewBanner'
@@ -19,8 +20,16 @@ export default async function IndexRoute({ children }: { children: ReactNode }) 
       <Suspense>
         <Navbar />
       </Suspense>
-      <div className="mt-20 flex-grow px-4 md:px-16 lg:px-32">
-        <Suspense>{children}</Suspense>
+      <div className={clsx([
+        'grid grid-cols-12 flex-grow',
+      ])}>
+        <div className={clsx([
+          'col-start-2 col-end-12 border-x',
+          'border-slate-500',
+          'dark:border-black',
+        ])}>
+          <Suspense>{children}</Suspense>
+        </div>
       </div>
       <Suspense>
         <Footer />
