@@ -5,6 +5,14 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.9-beta.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.9-beta.2...v1.0.9-beta.3) (2023-11-21)
+
+
+### 🐛 Bug Fixes
+
+* add missing link text decoration underline and correct offset ([ebb527f](https://github.com/TMCB-SPACE/next.tmcb.space/commit/ebb527fe4958a95fff693244f7591633a4e06f41))
+* correct page display and anchor text decoration ([a2c9bb9](https://github.com/TMCB-SPACE/next.tmcb.space/commit/a2c9bb942baece99af6ebc6efbf579601796d679))
+
 ## [1.0.9-beta.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.9-beta.1...v1.0.9-beta.2) (2023-11-21)
 
 
