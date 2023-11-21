@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.0...v1.1.1) (2023-11-21)
+
+
+### 🔁 Continuous Integration
+
+* test production environment ([5b0133b](https://github.com/TMCB-SPACE/next.tmcb.space/commit/5b0133b29925a86b8c85538e3baeafb89c76745f))
+
 ## [1.1.0](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.8...v1.1.0) (2023-11-21)
 
 
