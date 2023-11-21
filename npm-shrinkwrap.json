@@ -19,6 +19,7 @@
         "@tailwindcss/typography": "^0.5.10",
         "@vercel/og": "^0.5.17",
         "classnames": "^2.3.2",
+        "clsx": "^2.0.0",
         "date-fns": "^2.30.0",
         "intl-segmenter-polyfill": "^0.4.4",
         "next": "^13.5.4",
@@ -3889,6 +3890,14 @@
       "dev": true,
       "engines": {
         "node": ">=0.8"
+      }
+    },
+    "node_modules/clsx": {
+      "version": "2.0.0",
+      "resolved": "https://registry.npmjs.org/clsx/-/clsx-2.0.0.tgz",
+      "integrity": "sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==",
+      "engines": {
+        "node": ">=6"
       }
     },
     "node_modules/codemirror": {
