@@ -50,7 +50,7 @@ export default function Navbar(props: NavbarProps) {
               <li key={key}>
                 <Link
                   className={clsx([
-                    'p-6 border-l inline-block',
+                    'p-6 border-l inline-block underline-offset-2 hover:underline',
                     'border-slate-500 hover:bg-white',
                     'dark:border-black dark:hover:bg-black',
                   ])}

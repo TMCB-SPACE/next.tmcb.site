@@ -76,7 +76,7 @@ export default function Footer(props: FooterProps) {
                       <li className='w-full' key={key}>
                         <Link
                           className={clsx([
-                            'block p-6 border-t',
+                            'block p-6 border-t underline-offset-2 hover:underline',
                             'border-slate-500 hover:bg-white',
                             'dark:border-black dark:hover:bg-black',
                           ])}
@@ -106,7 +106,7 @@ export default function Footer(props: FooterProps) {
                       <li className="w-full" key={key}>
                         <a
                           className={clsx([
-                            'block p-6 border-t',
+                            'block p-6 border-t underline-offset-2 hover:underline',
                             'border-slate-500 hover:bg-white',
                             'dark:border-black dark:hover:bg-black',
                           ])}
