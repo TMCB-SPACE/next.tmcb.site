@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.9-beta.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.8...v1.0.9-beta.1) (2023-11-21)
+
+
+### 🐛 Bug Fixes
+
+* implement new header and fix layout ([2c2d8f4](https://github.com/TMCB-SPACE/next.tmcb.space/commit/2c2d8f44a5bbdc08849614a81b3838d1fb7c0692))
+
 ## [1.0.8](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.7...v1.0.8) (2023-11-21)
 
 
