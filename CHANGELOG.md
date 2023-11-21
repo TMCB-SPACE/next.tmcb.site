@@ -5,6 +5,14 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.9-beta.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.9-beta.1...v1.0.9-beta.2) (2023-11-21)
+
+
+### 🐛 Bug Fixes
+
+* correct neo-brutalist footer ([f776a17](https://github.com/TMCB-SPACE/next.tmcb.space/commit/f776a1707b301e426a88c2729727a38ef4aa57c3))
+* correct vercel deployment production branch ([db813c9](https://github.com/TMCB-SPACE/next.tmcb.space/commit/db813c99c66ada0deec29095c9da64ba7f6ca5bf))
+
 ## [1.0.9-beta.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.8...v1.0.9-beta.1) (2023-11-21)
 
 
