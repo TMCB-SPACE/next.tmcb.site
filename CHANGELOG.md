@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.1...v1.1.2) (2023-11-21)
+
+
+### 🐛 Bug Fixes
+
+* correct ci environment requirements in subsequent jobs ([c451713](https://github.com/TMCB-SPACE/next.tmcb.space/commit/c4517137e721e09dad0e43a67bbedc9dd5f583f9))
+
 ## [1.1.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.0...v1.1.1) (2023-11-21)
 
 
