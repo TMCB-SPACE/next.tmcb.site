@@ -5,6 +5,23 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.0](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.8...v1.1.0) (2023-11-21)
+
+
+### 🍕 Features
+
+* add proper styling for homepage projects ([51c0758](https://github.com/TMCB-SPACE/next.tmcb.space/commit/51c07589426d69cb0c919a89cd89ef8c96670f7f))
+
+
+### 🐛 Bug Fixes
+
+* add missing link text decoration underline and correct offset ([ebb527f](https://github.com/TMCB-SPACE/next.tmcb.space/commit/ebb527fe4958a95fff693244f7591633a4e06f41))
+* correct header fonts everywhere ([728eecf](https://github.com/TMCB-SPACE/next.tmcb.space/commit/728eecf5ac3720c810a0f02445448641b6fd0c54))
+* correct neo-brutalist footer ([f776a17](https://github.com/TMCB-SPACE/next.tmcb.space/commit/f776a1707b301e426a88c2729727a38ef4aa57c3))
+* correct page display and anchor text decoration ([a2c9bb9](https://github.com/TMCB-SPACE/next.tmcb.space/commit/a2c9bb942baece99af6ebc6efbf579601796d679))
+* correct vercel deployment production branch ([db813c9](https://github.com/TMCB-SPACE/next.tmcb.space/commit/db813c99c66ada0deec29095c9da64ba7f6ca5bf))
+* implement new header and fix layout ([2c2d8f4](https://github.com/TMCB-SPACE/next.tmcb.space/commit/2c2d8f44a5bbdc08849614a81b3838d1fb7c0692))
+
 ## [1.1.0-beta.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.9-beta.3...v1.1.0-beta.1) (2023-11-21)
 
 
