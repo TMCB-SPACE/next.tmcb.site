@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.0.8](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.7...v1.0.8) (2023-11-21)
+
+
+### 🐛 Bug Fixes
+
+* lint and version default vercel project configuration ([a38cde8](https://github.com/TMCB-SPACE/next.tmcb.space/commit/a38cde8fe58f3ada9e01ea1e261428bd90f5d7f4))
+
 ## [1.0.7](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.6...v1.0.7) (2023-11-20)
 
 
