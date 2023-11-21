@@ -20,12 +20,14 @@ jobs:
     outputs:
       DEPLOY_ENVIRONMENT: ${{ steps.env.outputs.DEPLOY_ENVIRONMENT }}
       VERCEL_ENVIRONMENT: ${{ steps.env.outputs.VERCEL_ENVIRONMENT }}
+      VERCEL_COMMAND: ${{ steps.env.outputs.VERCEL_COMMAND }}
     steps:
       - name: "☁️ compute environment variables"
         id: env
         run: |
           echo "DEPLOY_ENVIRONMENT=$([[ ${{ github.ref_name }} == 'main' ]] && echo 'production' || echo ${{ github.ref_name }})" >> $GITHUB_OUTPUT
           echo "VERCEL_ENVIRONMENT=$([[ ${{ github.ref_name }} == 'main' ]] && echo 'production' || echo 'preview')" >> $GITHUB_OUTPUT
+          echo "VERCEL_COMMAND=$([[ ${{ github.ref_name }} == 'main' ]] && echo '--prod' || echo '')" >> $GITHUB_OUTPUT
 
   test:
     name: Test and lint
@@ -96,10 +98,10 @@ jobs:
         run: npx vercel env pull .env.local --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: "📂 Build Project Artifacts"
-        run: npx vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel build ${{ needs.setup.outputs.VERCEL_COMMAND }} --token=${{ secrets.VERCEL_TOKEN }}
 
       - name: "🚀 Deploy Project Artifacts to Vercel"
-        run: npx vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+        run: npx vercel deploy --prebuilt ${{ needs.setup.outputs.VERCEL_COMMAND }} --token=${{ secrets.VERCEL_TOKEN }}
 
   cleanup:
     name: Cleanup actions
