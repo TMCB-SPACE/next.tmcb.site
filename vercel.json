@@ -1,0 +1,10 @@
+{
+  "framework": "nextjs",
+  "devCommand": "npm run dev",
+  "ignoreCommand": null,
+  "installCommand": "npm ci",
+  "buildCommand": "npm run build",
+  "outputDirectory": null,
+  "cleanUrls": true,
+  "trailingSlash": false
+}
