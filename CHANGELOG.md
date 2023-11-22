@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.3...v1.2.0-beta.1) (2023-11-22)
+
+
+### 🍕 Features
+
+* modernize next and sanity ([faab0da](https://github.com/TMCB-SPACE/next.tmcb.space/commit/faab0da4525138b763d3cde42c9fc746ed0b40cc))
+
 ## [1.1.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.2...v1.1.3) (2023-11-22)
 
 
