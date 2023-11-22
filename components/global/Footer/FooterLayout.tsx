@@ -3,12 +3,12 @@
 import { Icon } from '@iconify-icon/react'
 import type { PortableTextBlock } from '@portabletext/types'
 import { clsx } from 'clsx'
-import { CustomPortableText } from 'components/shared/CustomPortableText'
 import Image from 'next/image'
 import Link from 'next/link'
-import type { FooterItem, SettingsPayload, SocialLink } from 'types'
 
-import { resolveHref } from '../../../lib/sanity.links'
+import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import { resolveHref } from '@/sanity/lib/utils'
+import type { FooterItem, SettingsPayload, SocialLink } from '@/types'
 
 interface FooterProps {
   data: SettingsPayload
@@ -30,11 +30,11 @@ export default function Footer(props: FooterProps) {
         'grid grid-cols-12',
       ])}>
         {/*<div className="container px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg-py-8 mx-auto">*/}
-          <div className={clsx([
-            'col-start-2 col-end-12 border-x',
-            'border-slate-500',
-            'dark:border-black',
-          ])}>
+        <div className={clsx([
+          'col-start-2 col-end-12 border-x',
+          'border-slate-500',
+          'dark:border-black',
+        ])}>
           <div className="flex flex-row flex-wrap">
             <div className="basis-1/2 text-left flex">
               <Link href={resolveHref(home?._type) ?? '/'} className={clsx([

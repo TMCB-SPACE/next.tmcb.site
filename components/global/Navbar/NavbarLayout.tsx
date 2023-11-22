@@ -1,7 +1,8 @@
 import { clsx } from 'clsx'
-import { resolveHref } from 'lib/sanity.links'
 import Link from 'next/link'
-import type { SettingsPayload } from 'types'
+
+import { resolveHref } from '@/sanity/lib/utils'
+import type { SettingsPayload } from '@/types'
 
 import ThemeToggle from '../../shared/ThemeToggle'
 
@@ -21,11 +22,11 @@ export default function Navbar(props: NavbarProps) {
       'dark:bg-neutral-800/90 dark:border-black',
     ])}>
       <div className={clsx([
-          'col-start-2 col-end-12 text-2xl',
-          'flex justify-between items-center backdrop-blur border-x',
-          'border-slate-500',
-          'dark:border-black',
-        ])}>
+        'col-start-2 col-end-12 text-2xl',
+        'flex justify-between items-center backdrop-blur border-x',
+        'border-slate-500',
+        'dark:border-black',
+      ])}>
         {home && (
           <Link
             key={'homepage-nav-link'}

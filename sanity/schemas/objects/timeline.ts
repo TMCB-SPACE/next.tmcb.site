@@ -8,7 +8,8 @@ export default defineType({
     {
       name: 'items',
       title: 'Items',
-      description: "Allows for creating a number of timelines (max 2) for displaying in the page's body",
+      description:
+        "Allows for creating a number of timelines (max 2) for displaying in the page's body",
       type: 'array',
       validation: (Rule) => Rule.max(2),
       of: [
@@ -42,11 +43,14 @@ export default defineType({
             },
             prepare({ items, title }) {
               const hasItems = items && items.length > 0
-              const milestoneNames = hasItems && items.map((timeline) => timeline.title).join(', ')
+              const milestoneNames =
+                hasItems && items.map((timeline) => timeline.title).join(', ')
 
               return {
                 subtitle: hasItems
-                  ? `${milestoneNames} (${items.length} item${items.length > 1 ? 's' : ''})`
+                  ? `${milestoneNames} (${items.length} item${
+                      items.length > 1 ? 's' : ''
+                    })`
                   : 'No milestones',
                 title,
               }
@@ -62,11 +66,16 @@ export default defineType({
     },
     prepare({ items }: { items: { title: string }[] }) {
       const hasItems = items && items.length > 0
-      const timelineNames = hasItems && items.map((timeline) => timeline.title).join(', ')
+      const timelineNames =
+        hasItems && items.map((timeline) => timeline.title).join(', ')
 
       return {
         title: 'Timelines',
-        subtitle: hasItems ? `${timelineNames} (${items.length} item${items.length > 1 ? 's' : ''})` : 'No timelines',
+        subtitle: hasItems
+          ? `${timelineNames} (${items.length} item${
+              items.length > 1 ? 's' : ''
+            })`
+          : 'No timelines',
       }
     },
   },

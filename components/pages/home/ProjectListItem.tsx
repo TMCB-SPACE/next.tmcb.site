@@ -1,8 +1,9 @@
 import type { PortableTextBlock } from '@portabletext/types'
-import { clsx } from 'clsx'
-import { CustomPortableText } from 'components/shared/CustomPortableText'
-import ImageBox from 'components/shared/ImageBox'
-import type { ShowcaseProject } from 'types'
+import clsx from 'clsx'
+
+import { CustomPortableText } from '@/components/shared/CustomPortableText'
+import ImageBox from '@/components/shared/ImageBox'
+import type { ShowcaseProject } from '@/types'
 
 interface ProjectProps {
   project: ShowcaseProject

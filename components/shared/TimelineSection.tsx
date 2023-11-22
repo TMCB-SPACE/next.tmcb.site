@@ -1,5 +1,5 @@
-import { TimelineItem } from 'components/shared/TimelineItem'
-import type { MilestoneItem } from 'types'
+import { TimelineItem } from '@/components/shared/TimelineItem'
+import type { MilestoneItem } from '@/types'
 
 interface ITimelineItem {
   title: string
@@ -17,7 +17,10 @@ export function TimelineSection({ timelines }: { timelines: ITimelineItem[] }) {
 
             {milestones?.map((experience, index) => (
               <div key={index}>
-                <TimelineItem milestone={experience} isLast={milestones.length - 1 === index} />
+                <TimelineItem
+                  milestone={experience}
+                  isLast={milestones.length - 1 === index}
+                />
               </div>
             ))}
           </div>
