@@ -5,6 +5,49 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.2...v1.1.3) (2023-11-22)
+
+
+### 🧑‍💻 Code Refactoring
+
+* prepare sanity and next upgrades ([2cce1c0](https://github.com/TMCB-SPACE/next.tmcb.space/commit/2cce1c0f59d31f999de29a5a97608a98fd573e11))
+
+
+### 🔁 Continuous Integration
+
+* correct workflow stray echo ([806826d](https://github.com/TMCB-SPACE/next.tmcb.space/commit/806826d80b629dabaeab6df27254d961ceda993f))
+
+## [1.1.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.1...v1.1.2) (2023-11-21)
+
+
+### 🐛 Bug Fixes
+
+* correct ci environment requirements in subsequent jobs ([c451713](https://github.com/TMCB-SPACE/next.tmcb.space/commit/c4517137e721e09dad0e43a67bbedc9dd5f583f9))
+
+## [1.1.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.0...v1.1.1) (2023-11-21)
+
+
+### 🔁 Continuous Integration
+
+* test production environment ([5b0133b](https://github.com/TMCB-SPACE/next.tmcb.space/commit/5b0133b29925a86b8c85538e3baeafb89c76745f))
+
+## [1.1.0](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.8...v1.1.0) (2023-11-21)
+
+
+### 🍕 Features
+
+* add proper styling for homepage projects ([51c0758](https://github.com/TMCB-SPACE/next.tmcb.space/commit/51c07589426d69cb0c919a89cd89ef8c96670f7f))
+
+
+### 🐛 Bug Fixes
+
+* add missing link text decoration underline and correct offset ([ebb527f](https://github.com/TMCB-SPACE/next.tmcb.space/commit/ebb527fe4958a95fff693244f7591633a4e06f41))
+* correct header fonts everywhere ([728eecf](https://github.com/TMCB-SPACE/next.tmcb.space/commit/728eecf5ac3720c810a0f02445448641b6fd0c54))
+* correct neo-brutalist footer ([f776a17](https://github.com/TMCB-SPACE/next.tmcb.space/commit/f776a1707b301e426a88c2729727a38ef4aa57c3))
+* correct page display and anchor text decoration ([a2c9bb9](https://github.com/TMCB-SPACE/next.tmcb.space/commit/a2c9bb942baece99af6ebc6efbf579601796d679))
+* correct vercel deployment production branch ([db813c9](https://github.com/TMCB-SPACE/next.tmcb.space/commit/db813c99c66ada0deec29095c9da64ba7f6ca5bf))
+* implement new header and fix layout ([2c2d8f4](https://github.com/TMCB-SPACE/next.tmcb.space/commit/2c2d8f44a5bbdc08849614a81b3838d1fb7c0692))
+
 ## [1.1.0-beta.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.0.9-beta.3...v1.1.0-beta.1) (2023-11-21)
 
 
