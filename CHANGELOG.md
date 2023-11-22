@@ -5,6 +5,18 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.1.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.2...v1.1.3) (2023-11-22)
+
+
+### 🧑‍💻 Code Refactoring
+
+* prepare sanity and next upgrades ([2cce1c0](https://github.com/TMCB-SPACE/next.tmcb.space/commit/2cce1c0f59d31f999de29a5a97608a98fd573e11))
+
+
+### 🔁 Continuous Integration
+
+* correct workflow stray echo ([806826d](https://github.com/TMCB-SPACE/next.tmcb.space/commit/806826d80b629dabaeab6df27254d961ceda993f))
+
 ## [1.1.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.1...v1.1.2) (2023-11-21)
 
 
