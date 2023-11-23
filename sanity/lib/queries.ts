@@ -12,6 +12,13 @@ export const homePageQuery = groq`
       tags,
       title,
     },
+    showcasePosts[]->{
+      _type,
+      body,
+      "slug": slug.current,
+      publishedAt,
+      title,
+    },
     title,
   }
 `

@@ -41,12 +41,21 @@ export interface ShowcaseProject {
   title?: string
 }
 
+export interface ShowcasePost {
+  _type: string
+  body?: PortableTextBlock[]
+  slug?: string
+  publishedAt?: string
+  title?: string
+}
+
 // Page payloads
 
 export interface HomePagePayload {
   footer?: PortableTextBlock[]
   overview?: PortableTextBlock[]
   showcaseProjects?: ShowcaseProject[]
+  showcasePosts?: ShowcasePost[]
   title?: string
 }
 

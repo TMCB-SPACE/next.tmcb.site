@@ -2,6 +2,7 @@ import 'tailwindcss/tailwind.css'
 
 import { JetBrains_Mono, PT_Sans, Ubuntu } from 'next/font/google'
 import { ReactNode } from 'react'
+
 import { Providers } from '@/app/providers'
 
 const serif = Ubuntu({

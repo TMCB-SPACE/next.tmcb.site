@@ -71,6 +71,19 @@ export default defineType({
         }),
       ],
     }),
+    defineField({
+      name: 'showcasePosts',
+      title: 'Showcase posts',
+      description:
+        'These are the blog posts that will appear first on your landing page.',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'reference',
+          to: [{ type: 'post' }],
+        }),
+      ],
+    }),
   ],
   preview: {
     select: {
