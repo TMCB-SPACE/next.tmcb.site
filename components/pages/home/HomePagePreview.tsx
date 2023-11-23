@@ -1,6 +1,6 @@
 'use client'
 
-import { type QueryResponseInitial } from '@sanity/react-loader/rsc'
+import { EncodeDataAttributeCallback,type QueryResponseInitial } from '@sanity/react-loader/rsc'
 
 import { homePageQuery } from '@/sanity/lib/queries'
 import { useQuery } from '@/sanity/loader/useQuery'
@@ -10,6 +10,7 @@ import HomePage from './HomePage'
 
 type Props = {
   initial: QueryResponseInitial<HomePagePayload | null>
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
 export default function HomePagePreview(props: Props) {

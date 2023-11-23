@@ -25,6 +25,7 @@ export const useQuery = <
   const snapshot = queryStore.useQuery<QueryResponseResult, QueryResponseError>(
     query,
     params,
+    // @ts-ignore
     options,
   )
 

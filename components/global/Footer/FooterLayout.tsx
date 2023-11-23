@@ -23,8 +23,8 @@ export default function Footer(props: FooterProps) {
   return (
     <footer className={clsx([
       'border-t',
-      'bg-gray-100/90 border-slate-500',
-      'dark:bg-neutral-800/90 dark:border-black',
+      'bg-neutral-300 border-slate-500',
+      'dark:bg-neutral-800 dark:border-black',
     ])}>
       <div className={clsx([
         'grid grid-cols-12',
@@ -135,8 +135,8 @@ export default function Footer(props: FooterProps) {
         <div className={clsx([
           'col-start-2 col-end-12',
           'flex justify-between items-center backdrop-blur border-x',
-          'bg-gray-100/90 border-slate-500',
-          'dark:bg-neutral-800/90 dark:border-black',
+          'border-slate-500',
+          'dark:border-black',
         ])}>
           <p className="p-8 m-auto font-mono text-md">&copy; 2023 {process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE}. All rights reserved.</p>
         </div>

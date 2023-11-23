@@ -26,7 +26,7 @@ const mono = JetBrains_Mono({
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={`${mono.variable} ${sans.variable} ${serif.variable}`}>
-      <body className="bg-neutral-200 dark:bg-stone-900 text-black dark:text-stone-100 min-h-[100dvh]">
+      <body className="bg-neutral-200 dark:bg-neutral-700 text-black dark:text-stone-100 min-h-[100dvh]">
         <ThemeProvider attribute="class" enableSystem>{children}</ThemeProvider>
       </body>
     </html>

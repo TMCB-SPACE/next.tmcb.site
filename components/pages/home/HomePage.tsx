@@ -1,3 +1,4 @@
+import { type EncodeDataAttributeCallback } from '@sanity/react-loader/rsc'
 import clsx from 'clsx'
 import Link from 'next/link'
 
@@ -8,9 +9,10 @@ import type { HomePagePayload } from '@/types'
 
 export interface HomePageProps {
   data: HomePagePayload | null
+  encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function HomePage({ data }: HomePageProps) {
+export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   // Default to an empty object to allow previews on non-existent documents
   const { overview = [], showcaseProjects = [], title = '' } = data ?? {}
 
@@ -18,7 +20,7 @@ export function HomePage({ data }: HomePageProps) {
     <div className={clsx([
       'p-0'
     ])}>
-      {title && <Header centered title={title} description={overview} />}
+      {title && <Header data-sanity={encodeDataAttribute?.('title')} centered title={title} description={overview} />}
 
       {showcaseProjects && showcaseProjects.length > 0 && (
         <div className="mx-auto max-w-[100rem] grid grid-cols-2 flex-wrap gap-6 py-6">

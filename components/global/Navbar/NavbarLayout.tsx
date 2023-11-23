@@ -18,7 +18,7 @@ export default function Navbar(props: NavbarProps) {
   return (
     <div className={clsx([
       'sticky top-0 z-10 border-y grid grid-cols-12',
-      'bg-gray-100/90 border-slate-500',
+      'bg-neutral-300/90 border-slate-500',
       'dark:bg-neutral-800/90 dark:border-black',
     ])}>
       <div className={clsx([
