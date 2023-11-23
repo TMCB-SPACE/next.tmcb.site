@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2023-11-23)
+
+
+### 🐛 Bug Fixes
+
+* correct lint and color errors ([a691bab](https://github.com/TMCB-SPACE/next.tmcb.space/commit/a691bab1f15dcda5edee566da5155c555a923212))
+
 ## [1.2.0-beta.1](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.1.3...v1.2.0-beta.1) (2023-11-22)
 
 
