@@ -1,10 +1,8 @@
-'use client'
-
 import 'tailwindcss/tailwind.css'
 
 import { JetBrains_Mono, PT_Sans, Ubuntu } from 'next/font/google'
-import { ThemeProvider } from 'next-themes'
 import { ReactNode } from 'react'
+import { Providers } from '@/app/providers'
 
 const serif = Ubuntu({
   variable: '--font-serif',
@@ -25,9 +23,9 @@ const mono = JetBrains_Mono({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${mono.variable} ${sans.variable} ${serif.variable}`}>
+    <html lang="en" className={`${mono.variable} ${sans.variable} ${serif.variable}`} suppressHydrationWarning>
       <body className="bg-neutral-200 dark:bg-neutral-700 text-black dark:text-stone-100 min-h-[100dvh]">
-        <ThemeProvider attribute="class" enableSystem>{children}</ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   )
