@@ -37,7 +37,7 @@ export function ProjectListItem(props: ProjectProps) {
       </div>
 
       <div className={clsx([
-        'border-t p-5 text-xl font-sans min-h-[97px]',
+        'border-t p-5 text-lg font-sans min-h-[125px]',
         'border-slate-500',
         'dark:border-black',
       ])}>

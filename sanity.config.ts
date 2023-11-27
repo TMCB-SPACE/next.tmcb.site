@@ -13,6 +13,7 @@ import { locate } from '@/sanity/plugins/locate'
 import { pageStructure, singletonPlugin } from '@/sanity/plugins/settings'
 import page from '@/sanity/schemas/documents/page'
 import post from '@/sanity/schemas/documents/post'
+import member from '@/sanity/schemas/documents/member'
 import project from '@/sanity/schemas/documents/project'
 import duration from '@/sanity/schemas/objects/duration'
 import milestone from '@/sanity/schemas/objects/milestone'
@@ -38,11 +39,12 @@ export default defineConfig({
       home,
       settings,
       // Documents
-      duration,
       page,
       project,
       post,
+      member,
       // Objects
+      duration,
       milestone,
       timeline,
       socialLink,

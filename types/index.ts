@@ -43,9 +43,12 @@ export interface ShowcaseProject {
 
 export interface ShowcasePost {
   _type: string
+  coverImage?: Image
+  overview?: PortableTextBlock[]
   body?: PortableTextBlock[]
   slug?: string
   publishedAt?: string
+  categories?: string[]
   title?: string
 }
 

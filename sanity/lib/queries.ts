@@ -15,8 +15,11 @@ export const homePageQuery = groq`
     showcasePosts[]->{
       _type,
       body,
+      overview,
+      coverImage,
       "slug": slug.current,
       publishedAt,
+      categories,
       title,
     },
     title,
