@@ -5,6 +5,22 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2023-11-28)
+
+
+### 🍕 Features
+
+* add basic post structures and homepage showcase ([ef81bc9](https://github.com/TMCB-SPACE/next.tmcb.space/commit/ef81bc9cfd1e9d9f9772005df1831d00ed9f0d8e))
+* add team members functionality schemas ([9aa7fbd](https://github.com/TMCB-SPACE/next.tmcb.space/commit/9aa7fbd165d37a370699280278ab0e3caaccb126))
+* change responsive screen sizes and add member display ([fdcd418](https://github.com/TMCB-SPACE/next.tmcb.space/commit/fdcd41846f42b4e8466e70c2bc5c84651124dcde))
+* normalize basic page display ([97192d1](https://github.com/TMCB-SPACE/next.tmcb.space/commit/97192d12ee9dce963ee8e2cc0ee37da38c3e6a23))
+
+
+### 🐛 Bug Fixes
+
+* correct hydration errors ([560b0d3](https://github.com/TMCB-SPACE/next.tmcb.space/commit/560b0d3394cc3d283122f88fdac5e305549be70b))
+* correct overall responsive layout spacing ([0b6c2b3](https://github.com/TMCB-SPACE/next.tmcb.space/commit/0b6c2b305e41485198b318489c96455b04f0bcf5))
+
 ## [1.2.0-beta.2](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.1...v1.2.0-beta.2) (2023-11-23)
 
 
