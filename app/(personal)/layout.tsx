@@ -53,10 +53,12 @@ export default async function IndexRoute({
           <Navbar />
         </Suspense>
         <div className={clsx([
-          'grid grid-cols-12 flex-grow',
+          'relative border-y -my-[1px] flex-grow grid grid-cols-xs sm:grid-cols-sm lg:grid-cols-lg xl:grid-cols-xl',
+          'border-slate-500',
+          'dark:border-black',
         ])}>
           <div className={clsx([
-            'col-start-2 col-end-12 border-x',
+            'col-start-2 col-end-3 border-x',
             'border-slate-500',
             'dark:border-black',
           ])}>

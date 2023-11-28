@@ -25,7 +25,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
       {showcasePosts && showcasePosts.length > 0 && (
         <div className={clsx([
-          'w-full grid grid-cols-1'
+          '-m-[0.5px] grid grid-cols-1',
         ])} data-section="posts">
           <div>
             <Header centered title='Blog'/>

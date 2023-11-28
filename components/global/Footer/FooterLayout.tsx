@@ -22,16 +22,15 @@ export default function Footer(props: FooterProps) {
 
   return (
     <footer className={clsx([
-      'border-t',
-      'bg-neutral-300 border-slate-500',
-      'dark:bg-neutral-800 dark:border-black',
+      '',
     ])}>
       <div className={clsx([
-        'grid grid-cols-12',
+        'relative border-y -my-[1px] grid grid-cols-xs sm:grid-cols-sm lg:grid-cols-lg xl:grid-cols-xl',
+        'bg-neutral-300 border-slate-500',
+        'dark:bg-neutral-800 dark:border-black',
       ])}>
-        {/*<div className="container px-4 sm:px-6 lg:px-8 py-4 sm:py-6 lg-py-8 mx-auto">*/}
         <div className={clsx([
-          'col-start-2 col-end-12 border-x',
+          'col-start-2 col-end-3 border-x',
           'border-slate-500',
           'dark:border-black',
         ])}>
@@ -128,12 +127,12 @@ export default function Footer(props: FooterProps) {
         </div>
       </div>
       <div className={clsx([
-        'grid grid-cols-12 border-t',
-        'border-slate-500',
-        'dark:border-black',
+        'relative z-10 border-y -my-[1px] grid grid-cols-xs sm:grid-cols-sm lg:grid-cols-lg xl:grid-cols-xl',
+        'bg-neutral-300 border-slate-500',
+        'dark:bg-neutral-800 dark:border-black',
       ])}>
         <div className={clsx([
-          'col-start-2 col-end-12',
+          'col-start-2 col-end-3',
           'flex justify-between items-center backdrop-blur border-x',
           'border-slate-500',
           'dark:border-black',
