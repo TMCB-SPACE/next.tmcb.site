@@ -7,6 +7,7 @@ interface HeaderProps {
   description?: any[]
   title?: string
 }
+
 export function Header(props: HeaderProps) {
   const { title, description, centered = false } = props
   if (!description && !title) {
