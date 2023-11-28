@@ -5,6 +5,18 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.5](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2023-11-28)
+
+
+### 🍕 Features
+
+* break all spacings and change posts to grid ([f058b47](https://github.com/TMCB-SPACE/next.tmcb.space/commit/f058b47526764a28dc25833c769945a1eef73033))
+
+
+### 🧑‍💻 Code Refactoring
+
+* correct lint errors ([b1982d5](https://github.com/TMCB-SPACE/next.tmcb.space/commit/b1982d54162d21fed7d775aa55495004c014c4ec))
+
 ## [1.2.0-beta.4](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2023-11-28)
 
 
