@@ -23,7 +23,7 @@ export function ProjectListItem(props: ProjectProps) {
       ])}
     >
       <h2 className={clsx([
-        'text-xl font-extrabold tracking-tight p-5 border-b',
+        'text-xl font-extrabold tracking-tight p-1 border-b',
         'border-slate-500',
         'dark:border-black',
       ])}>{project.title}</h2>
@@ -37,7 +37,7 @@ export function ProjectListItem(props: ProjectProps) {
       </div>
 
       <div className={clsx([
-        'border-t p-5 text-lg font-sans min-h-[125px]',
+        'border-t p-1 text-lg font-sans min-h-[125px]',
         'border-slate-500',
         'dark:border-black',
       ])}>
@@ -45,7 +45,7 @@ export function ProjectListItem(props: ProjectProps) {
       </div>
 
       <div className={clsx([
-        'flex flex-row gap-x-2 border-t p-5 font-mono',
+        'flex flex-row gap-x-[0.875rem] border-t p-1 font-mono',
         'border-slate-500',
         'dark:border-black',
       ])}>

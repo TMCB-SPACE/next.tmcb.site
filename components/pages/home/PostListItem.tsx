@@ -18,65 +18,63 @@ export function PostListItem(props: PostProps) {
   return (
     <div
       className={clsx([
-        // 'gap-y-1 p-1 pb-2 md:px-2 md:py-1.5 group hover:bg-white focus-visible:bg-white',
-        'relative border -m-[0.5px] p-12 flex flex-row gap-4',
+        'gap-y-1 gap-x-2 p-1 md:p-2 group grid md:grid-cols-[theme(spacing.9)_1fr] lg:grid-cols-[theme(spacing.8)_1fr_theme(spacing.11)]',
+        'relative border -m-[0.5px]',
         'border-slate-500 hover:bg-white focus-visible:bg-white',
         'dark:border-black dark:hover:bg-black dark:focus-visible:bg-black',
         odd && ''
       ])}
     >
-      <div className='basis-1/4'>
+      <div className={clsx([
+        'w-full sm:max-w-12 relative md:row-span-2 lg:row-span-1'
+      ])}>
         <ImageBox
-          width={363}
-          height={204}
+          width={384}
+          height={256}
           image={post.coverImage}
           alt={`Cover image from ${post.title}`}
-          classesWrapper='relative aspect-[16/9]'
+          classesWrapper='relative aspect-[3/2] border border-slate-500 dark:border-black'
         />
       </div>
 
       <div className={clsx([
-        'p-5 basis-1/2'
+        'pr-1'
       ])}>
-        <p>{`${formattedDate} (${daysAgo} days ago)`}</p>
+        <p className={clsx([
+          'font-mono text-sm leading-mono last:mb-0 mb-1 font-normal uppercase text-gray-dark'
+        ])}>{`${formattedDate} (${daysAgo < 1 ? 'today' : `${daysAgo} days ago`})`}</p>
 
         <h2 className={clsx([
-          'text-xl font-extrabold tracking-tight'
+          'font-extrabold tracking-tight',
+          'text-xl md:text-3xl leading-heading last:mb-0 mb-1 font-bold normal-case decoration-[0.0625em] underline-offset-body cursor-pointer hover:underline focus-visible:underline group-hover:underline group-focus-visible:underline max-w-[45rem] [text-wrap:pretty]'
         ])}>{post.title}</h2>
 
         <div className={clsx([
-          'flex gap-3 flex-row items-center',
+          'flex gap-[1rem] flex-row items-center',
         ])}>
           <div className={clsx([
-            'w-16',
+            'w-[42px]',
           ])}>
             <ImageBox
-              width={64}
-              height={64}
+              width={42}
+              height={42}
               image={post.author?.coverImage}
               alt={`Cover image from ${post.author?.title?.replace(/[\u200B-\u200D\uFEFF]/g, '')}`}
-              classesWrapper='px-0.5px flex shrink-0 grow-0 w-10 relative rounded-full aspect-[1/1]'
+              classesWrapper='px-[0.5px] flex shrink-0 grow-0 w-[42px] relative rounded-full aspect-[1/1]'
             />
           </div>
 
           <div className='font-mono text-sm leading-mono font-normal uppercase text-gray-dark'>
-            by {post.author?.title}
-          </div>
-
-          <div className={clsx([
-            'flex flex-row gap-x-2 font-mono',
-          ])}>
-            {post.categories?.map((tag, key) => (
-              <div className='text-md font-medium lowercase md:text-lg' key={key}>
-                #{tag}
-              </div>
+            by {post.author?.title}{post.categories?.map((tag, key) => (
+              <span className='whitespace-nowrap' key={key}> • {tag}</span>
             ))}
           </div>
         </div>
       </div>
 
       <div className={clsx([
-        'p-5 text-xl font-sans',
+        'p-[0.5rem] text-md font-sans',
+        'font-body text-base tracking-wide leading-normal font-normal normal-case max-w-[45rem]'
       ])}>
         <CustomPortableText value={post.overview as PortableTextBlock[]} />
       </div>

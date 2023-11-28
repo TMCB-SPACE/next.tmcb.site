@@ -32,7 +32,7 @@ export default function Navbar(props: NavbarProps) {
           <Link
             key={'homepage-nav-link'}
             className={clsx([
-              'font-extrabold p-6 border-r',
+              'font-extrabold p-1 border-r',
               'border-slate-500 hover:bg-white',
               'dark:border-black dark:hover:bg-black',
             ])}
@@ -52,7 +52,7 @@ export default function Navbar(props: NavbarProps) {
               <li key={key}>
                 <Link
                   className={clsx([
-                    'p-6 border-l inline-block underline-offset-2 hover:underline',
+                    'p-1 border-l inline-block underline-offset-2 hover:underline',
                     'border-slate-500 hover:bg-white',
                     'dark:border-black dark:hover:bg-black',
                   ])}
@@ -64,7 +64,7 @@ export default function Navbar(props: NavbarProps) {
             )
           })}
           <li className={clsx([
-            'font-extrabold p-6 border-l',
+            'font-extrabold p-1 border-l',
             'border-slate-500 hover:bg-white',
             'dark:border-black dark:hover:bg-black',
           ])}>

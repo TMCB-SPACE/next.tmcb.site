@@ -22,7 +22,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
     <>
       {title && <GeometricContainer>
         <div className={clsx([
-          'p-16'
+          'pt-1'
         ])}>
           <Header data-sanity={encodeDataAttribute?.('title')} centered title={title} description={overview} />
         </div>
@@ -65,7 +65,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
           <GeometricContainer>
             <div className={clsx([
-              '-m-[1px] grid grid-cols-1 lg:grid-cols-2 flex-wrap gap-6 p-6'
+              '-m-[1px] grid grid-cols-1 lg:grid-cols-2 flex-wrap gap-1 p-1'
             ])} data-section="projects">
               {showcaseProjects.map((project, key) => {
                 const href = resolveHref(project._type, project.slug)

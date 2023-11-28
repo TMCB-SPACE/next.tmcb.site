@@ -49,7 +49,7 @@ export default function Footer(props: FooterProps) {
                   className="w-48 h-48"/>
               </Link>
               <div className={clsx([
-                'inline-flex flex-row flex-1 p-8 border-l',
+                'inline-flex flex-row flex-1 p-1 border-l',
                 'border-slate-500',
                 'dark:border-black',
               ])}>
@@ -62,7 +62,7 @@ export default function Footer(props: FooterProps) {
               'dark:border-black'
             ])}>
               <h3 className={clsx([
-                'font-extrabold font-mono p-6',
+                'font-extrabold font-mono p-1',
               ])}>Company</h3>
               {footerItems && (
                 <ul className='flex flex-wrap m-0'>
@@ -75,7 +75,7 @@ export default function Footer(props: FooterProps) {
                       <li className='w-full' key={key}>
                         <Link
                           className={clsx([
-                            'block p-6 border-t underline-offset-2 hover:underline',
+                            'block p-1 border-t underline-offset-2 hover:underline',
                             'border-slate-500 hover:bg-white',
                             'dark:border-black dark:hover:bg-black',
                           ])}
@@ -96,7 +96,7 @@ export default function Footer(props: FooterProps) {
               'dark:border-black'
             ])}>
               <h3 className={clsx([
-                'font-extrabold font-mono p-6',
+                'font-extrabold font-mono p-1',
               ])}>Social links</h3>
               {socialLinks && (
                 <ul className='flex flex-wrap m-0'>
@@ -105,7 +105,7 @@ export default function Footer(props: FooterProps) {
                       <li className="w-full" key={key}>
                         <a
                           className={clsx([
-                            'block p-6 border-t underline-offset-2 hover:underline',
+                            'block p-1 border-t underline-offset-2 hover:underline',
                             'border-slate-500 hover:bg-white',
                             'dark:border-black dark:hover:bg-black',
                           ])}
@@ -137,7 +137,7 @@ export default function Footer(props: FooterProps) {
           'border-slate-500',
           'dark:border-black',
         ])}>
-          <p className="p-8 m-auto font-mono text-md">&copy; 2023 {process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE}. All rights reserved.</p>
+          <p className="p-1 m-auto font-mono text-md">&copy; 2023 {process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE}. All rights reserved.</p>
         </div>
       </div>
     </footer>
