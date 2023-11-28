@@ -4,6 +4,7 @@ import Link from 'next/link'
 
 import { PostListItem } from '@/components/pages/home/PostListItem'
 import { ProjectListItem } from '@/components/pages/home/ProjectListItem'
+import GeometricContainer from '@/components/shared/GeometricContainer'
 import { Header } from '@/components/shared/Header'
 import { resolveHref } from '@/sanity/lib/utils'
 import type { HomePagePayload } from '@/types'
@@ -18,19 +19,20 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
   const { title = '', overview = [], showcaseProjects = [], showcasePosts = [] } = data ?? {}
 
   return (
-    <div className={clsx([
-      'p-0'
-    ])}>
+    <>
+    <GeometricContainer>
       {title && <Header data-sanity={encodeDataAttribute?.('title')} centered title={title} description={overview} />}
+    </GeometricContainer>
 
-      {showcasePosts && showcasePosts.length > 0 && (
+      <GeometricContainer>
+        <Header centered title='Blog' />
+      </GeometricContainer>
+
+      <GeometricContainer>
+        {showcasePosts && showcasePosts.length > 0 && (
         <div className={clsx([
           '-m-[0.5px] grid grid-cols-1',
         ])} data-section="posts">
-          <div>
-            <Header centered title='Blog'/>
-          </div>
-
           {showcasePosts.map((post, key) => {
             const href = resolveHref(post._type, post.slug)
             if (!href) {
@@ -48,7 +50,9 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
       )}
 
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 flex-wrap gap-6 p-6" data-section="projects">
+        <div className={clsx([
+          '-m-[1px] grid grid-cols-1 lg:grid-cols-2 flex-wrap gap-6 p-6'
+        ])} data-section="projects">
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project._type, project.slug)
             if (!href) {
@@ -64,7 +68,8 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
           })}
         </div>
       )}
-    </div>
+    </GeometricContainer>
+    </>
   )
 }
 

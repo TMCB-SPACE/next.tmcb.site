@@ -1,7 +1,6 @@
 import 'styles/index.css'
 
 import { toPlainText } from '@portabletext/react'
-import clsx from 'clsx'
 import { Metadata, Viewport } from 'next'
 import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
@@ -48,27 +47,16 @@ export default async function IndexRoute({
 }) {
   return (
     <>
-      <div className="flex flex-col min-h-screen">
-        <Suspense>
-          <Navbar />
-        </Suspense>
-        <div className={clsx([
-          'relative border-y -my-[1px] flex-grow grid grid-cols-xs sm:grid-cols-sm lg:grid-cols-lg xl:grid-cols-xl',
-          'border-slate-500',
-          'dark:border-black',
-        ])}>
-          <div className={clsx([
-            'col-start-2 col-end-3 border-x',
-            'border-slate-500',
-            'dark:border-black',
-          ])}>
-            <Suspense>{children}</Suspense>
-          </div>
-        </div>
-        <Suspense>
-          <Footer />
-        </Suspense>
-      </div>
+      <Suspense>
+        <Navbar />
+      </Suspense>
+
+      <Suspense>{children}</Suspense>
+
+      <Suspense>
+        <Footer />
+      </Suspense>
+
       {draftMode().isEnabled && <VisualEditing />}
     </>
   )

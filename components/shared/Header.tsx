@@ -15,13 +15,16 @@ export function Header(props: HeaderProps) {
   return (
     <div className={clsx([
       'font-mono',
-      centered ? 'text-center p-8 -my-[0.5px] border-b border-slate-500 dark:border-black' : 'w-5/6 lg:w-4/6'
+      centered ? 'text-center p-8 -m-[0.5px]' : 'w-5/6 lg:w-4/6'
     ])}>
       {/* Title */}
       {title && <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">{title}</h1>}
       {/* Description */}
       {description && (
-        <div className="my-8 font-sans text-xl md:text-2xl">
+        <div className={clsx([
+          'my-8 font-sans text-xl md:text-2xl mx-auto',
+          centered && 'w-5/6 lg:w-4/6'
+        ])}>
           <CustomPortableText value={description} />
         </div>
       )}

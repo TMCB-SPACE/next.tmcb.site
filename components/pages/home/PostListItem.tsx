@@ -18,9 +18,10 @@ export function PostListItem(props: PostProps) {
   return (
     <div
       className={clsx([
-        'border -m-[0.5px] p-12 flex flex-row gap-4',
-        'border-slate-500 hover:bg-white',
-        'dark:border-black dark:hover:bg-black',
+        // 'gap-y-1 p-1 pb-2 md:px-2 md:py-1.5 group hover:bg-white focus-visible:bg-white',
+        'relative border -m-[0.5px] p-12 flex flex-row gap-4',
+        'border-slate-500 hover:bg-white focus-visible:bg-white',
+        'dark:border-black dark:hover:bg-black dark:focus-visible:bg-black',
         odd && ''
       ])}
     >

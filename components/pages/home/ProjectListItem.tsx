@@ -19,7 +19,7 @@ export function ProjectListItem(props: ProjectProps) {
         'border rounded-xl',
         'bg-gray-100/90 border-slate-500 hover:bg-white',
         'dark:bg-neutral-800/90 dark:border-black dark:hover:bg-black',
-        odd && 'border-b border-t xl:flex-row-reverse'
+        odd && ''
       ])}
     >
       <h2 className={clsx([
