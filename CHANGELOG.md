@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.4](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.3...v1.2.0-beta.4) (2023-11-28)
+
+
+### 🐛 Bug Fixes
+
+* correct home page layout ([9b32f53](https://github.com/TMCB-SPACE/next.tmcb.space/commit/9b32f53ed8057e9c85a21aad57139a6abe3d2389))
+
 ## [1.2.0-beta.3](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.2...v1.2.0-beta.3) (2023-11-28)
 
 
