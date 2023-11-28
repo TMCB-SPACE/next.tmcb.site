@@ -49,6 +49,11 @@ export interface ShowcasePost {
   slug?: string
   publishedAt?: string
   categories?: string[]
+  author?: {
+    slug?: string
+    title?: string
+    coverImage?: Image
+  }
   title?: string
 }
 

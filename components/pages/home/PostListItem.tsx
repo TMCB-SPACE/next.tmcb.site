@@ -18,7 +18,7 @@ export function PostListItem(props: PostProps) {
   return (
     <div
       className={clsx([
-        'border-b p-12 flex flex-row gap-4',
+        'border -m-[0.5px] p-12 flex flex-row gap-4',
         'border-slate-500 hover:bg-white',
         'dark:border-black dark:hover:bg-black',
         odd && ''
@@ -26,6 +26,8 @@ export function PostListItem(props: PostProps) {
     >
       <div className='basis-1/4'>
         <ImageBox
+          width={363}
+          height={204}
           image={post.coverImage}
           alt={`Cover image from ${post.title}`}
           classesWrapper='relative aspect-[16/9]'
@@ -42,13 +44,33 @@ export function PostListItem(props: PostProps) {
         ])}>{post.title}</h2>
 
         <div className={clsx([
-          'flex flex-row gap-x-2 font-mono',
+          'flex gap-3 flex-row items-center',
         ])}>
-          {post.categories?.map((tag, key) => (
-            <div className='text-md font-medium lowercase md:text-lg' key={key}>
-              #{tag}
-            </div>
-          ))}
+          <div className={clsx([
+            'w-16',
+          ])}>
+            <ImageBox
+              width={64}
+              height={64}
+              image={post.author?.coverImage}
+              alt={`Cover image from ${post.author?.title?.replace(/[\u200B-\u200D\uFEFF]/g, '')}`}
+              classesWrapper='px-0.5px flex shrink-0 grow-0 w-10 relative rounded-full aspect-[1/1]'
+            />
+          </div>
+
+          <div className='font-mono text-sm leading-mono font-normal uppercase text-gray-dark'>
+            by {post.author?.title}
+          </div>
+
+          <div className={clsx([
+            'flex flex-row gap-x-2 font-mono',
+          ])}>
+            {post.categories?.map((tag, key) => (
+              <div className='text-md font-medium lowercase md:text-lg' key={key}>
+                #{tag}
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

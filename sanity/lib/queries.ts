@@ -20,6 +20,11 @@ export const homePageQuery = groq`
       "slug": slug.current,
       publishedAt,
       categories,
+      author->{
+        slug,
+        title,
+        coverImage,
+      },
       title,
     },
     title,

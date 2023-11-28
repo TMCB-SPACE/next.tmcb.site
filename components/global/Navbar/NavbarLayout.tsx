@@ -17,12 +17,13 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <div className={clsx([
-      'sticky top-0 z-10 border-y grid grid-cols-12',
+      // 'sticky top-0 z-10 border-y grid grid-cols-12',
+      'sticky top-0 z-10 border-y grid grid-cols-xs sm:grid-cols-sm lg:grid-cols-lg xl:grid-cols-xl',
       'bg-neutral-300/90 border-slate-500',
       'dark:bg-neutral-800/90 dark:border-black',
     ])}>
       <div className={clsx([
-        'col-start-2 col-end-12 text-2xl',
+        'col-start-2 col-end-3 text-2xl',
         'flex justify-between items-center backdrop-blur border-x',
         'border-slate-500',
         'dark:border-black',

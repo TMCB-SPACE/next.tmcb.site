@@ -79,6 +79,18 @@ export default {
       },
       validation: (rule) => rule.required(),
     }),
+    defineField({
+      name: 'socialLinks',
+      title: 'Social Links',
+      description: 'Links displayed on team member display.',
+      type: 'array',
+      of: [
+        {
+          type: 'socialLink',
+        },
+      ],
+      validation: (rule) => rule.unique(),
+    }),
   ],
   preview: {
     select: {

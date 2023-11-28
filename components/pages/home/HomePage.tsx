@@ -25,8 +25,8 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
       {showcasePosts && showcasePosts.length > 0 && (
         <div className={clsx([
-          'w-full'
-        ])}>
+          'w-full grid grid-cols-1'
+        ])} data-section="posts">
           <div>
             <Header centered title='Blog'/>
           </div>
@@ -48,7 +48,7 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
       )}
 
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 flex-wrap gap-6 p-6">
+        <div className="w-full grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 flex-wrap gap-6 p-6" data-section="projects">
           {showcaseProjects.map((project, key) => {
             const href = resolveHref(project._type, project.slug)
             if (!href) {

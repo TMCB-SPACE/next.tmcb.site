@@ -66,6 +66,19 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      type: 'reference',
+      name: 'author',
+      title: 'Author',
+      to: [{ type: 'member' }],
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      type: 'array',
+      name: 'coAuthors',
+      title: 'Co-authors',
+      of: [{ type: 'reference', to: [{ type: 'member' }] }],
+    }),
+    defineField({
       type: 'datetime',
       name: 'publishedAt',
       title: 'Published at',
