@@ -20,55 +20,70 @@ export function HomePage({ data, encodeDataAttribute }: HomePageProps) {
 
   return (
     <>
-    <GeometricContainer>
-      {title && <Header data-sanity={encodeDataAttribute?.('title')} centered title={title} description={overview} />}
-    </GeometricContainer>
-
-      <GeometricContainer>
-        <Header centered title='Blog' />
-      </GeometricContainer>
-
-      <GeometricContainer>
-        {showcasePosts && showcasePosts.length > 0 && (
+      {title && <GeometricContainer>
         <div className={clsx([
-          '-m-[0.5px] grid grid-cols-1',
-        ])} data-section="posts">
-          {showcasePosts.map((post, key) => {
-            const href = resolveHref(post._type, post.slug)
-            if (!href) {
-              return null
-            }
-            return (
-              <Link key={key} href={href} className={clsx([
-                'block'
-              ])}>
-                <PostListItem post={post} odd={key % 2} />
-              </Link>
-            )
-          })}
+          'p-16'
+        ])}>
+          <Header data-sanity={encodeDataAttribute?.('title')} centered title={title} description={overview} />
         </div>
+      </GeometricContainer>}
+
+      {showcasePosts && showcasePosts.length > 0 && (
+        <>
+          <GeometricContainer>
+            <Header centered title='Blog' />
+          </GeometricContainer>
+
+          <GeometricContainer>
+
+            <div className={clsx([
+              '-m-[0.5px] grid grid-cols-1',
+            ])} data-section="posts">
+              {showcasePosts.map((post, key) => {
+                const href = resolveHref(post._type, post.slug)
+                if (!href) {
+                  return null
+                }
+                return (
+                  <Link key={key} href={href} className={clsx([
+                    'block'
+                  ])}>
+                    <PostListItem post={post} odd={key % 2} />
+                  </Link>
+                )
+              })}
+            </div>
+          </GeometricContainer>
+        </>
       )}
 
       {showcaseProjects && showcaseProjects.length > 0 && (
-        <div className={clsx([
-          '-m-[1px] grid grid-cols-1 lg:grid-cols-2 flex-wrap gap-6 p-6'
-        ])} data-section="projects">
-          {showcaseProjects.map((project, key) => {
-            const href = resolveHref(project._type, project.slug)
-            if (!href) {
-              return null
-            }
-            return (
-              <Link key={key} href={href} className={clsx([
-                'block'
-              ])}>
-                <ProjectListItem project={project} odd={key % 2} />
-              </Link>
-            )
-          })}
-        </div>
+        <>
+          <GeometricContainer>
+            <Header centered title='Our Open Source Projects' />
+          </GeometricContainer>
+
+          <GeometricContainer>
+            <div className={clsx([
+              '-m-[1px] grid grid-cols-1 lg:grid-cols-2 flex-wrap gap-6 p-6'
+            ])} data-section="projects">
+              {showcaseProjects.map((project, key) => {
+                const href = resolveHref(project._type, project.slug)
+                if (!href) {
+                  return null
+                }
+                return (
+                  <Link key={key} href={href} className={clsx([
+                    'block'
+                  ])}>
+                    <ProjectListItem project={project} odd={key % 2} />
+                  </Link>
+                )
+              })}
+            </div>
+          </GeometricContainer>
+        </>
       )}
-    </GeometricContainer>
     </>
   )
 }
