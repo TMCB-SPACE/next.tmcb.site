@@ -75,6 +75,21 @@ export interface PagePayload {
   slug?: string
 }
 
+export interface PostPayload {
+  author?: {
+    slug?: string
+    title?: string
+    coverImage?: Image
+  }
+  body?: PortableTextBlock[]
+  categories?: string[]
+  coverImage?: Image
+  overview?: PortableTextBlock[]
+  publishedAt?: string
+  slug?: string
+  title?: string
+}
+
 export interface ProjectPayload {
   client?: string
   coverImage?: Image

@@ -8,6 +8,7 @@ import { ProjectPage } from '@/components/pages/project/ProjectPage'
 import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
 import { loadProject } from '@/sanity/loader/loadQuery'
+
 const ProjectPreview = dynamic(
   () => import('@/components/pages/project/ProjectPreview'),
 )

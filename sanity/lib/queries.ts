@@ -41,6 +41,24 @@ export const pagesBySlugQuery = groq`
   }
 `
 
+export const postsBySlugQuery = groq`
+  *[_type == "post" && slug.current == $slug][0] {
+    _id,
+    author->{
+      slug,
+      title,
+      coverImage,
+    },
+    body,
+    categories,
+    coverImage,
+    overview,
+    publishedAt,
+    title,
+    "slug": slug.current,
+  }
+`
+
 export const projectBySlugQuery = groq`
   *[_type == "project" && slug.current == $slug][0] {
     _id,
