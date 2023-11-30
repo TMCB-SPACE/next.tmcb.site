@@ -5,6 +5,19 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.6](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2023-11-30)
+
+
+### 🍕 Features
+
+* add blog post simple display ([641d6cb](https://github.com/TMCB-SPACE/next.tmcb.space/commit/641d6cbdfe0c77928135406b234f2b669279c3f2))
+* add portable text highlight and client code ([fcd9cf1](https://github.com/TMCB-SPACE/next.tmcb.space/commit/fcd9cf11073252d28bdbb146b0e2b011f7fea94f))
+
+
+### 🤖 Build System
+
+* update dependencies ([c068dfb](https://github.com/TMCB-SPACE/next.tmcb.space/commit/c068dfb7ab47171e8c172f2178a7687e7cf32cb4))
+
 ## [1.2.0-beta.5](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.4...v1.2.0-beta.5) (2023-11-28)
 
 
