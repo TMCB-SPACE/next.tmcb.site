@@ -5,6 +5,14 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.7](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2023-11-30)
+
+
+### 🐛 Bug Fixes
+
+* correct multiple theme providers ([3fd3104](https://github.com/TMCB-SPACE/next.tmcb.space/commit/3fd310461bd8e954914fc10651cbddda38e04ff8))
+* correct syntax highlighter hydration and types ([249a988](https://github.com/TMCB-SPACE/next.tmcb.space/commit/249a988220893b366e540027eccd21e7ddfac899))
+
 ## [1.2.0-beta.6](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.5...v1.2.0-beta.6) (2023-11-30)
 
 
