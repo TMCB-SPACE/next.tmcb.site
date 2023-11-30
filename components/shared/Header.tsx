@@ -15,8 +15,8 @@ export function Header(props: HeaderProps) {
   }
   return (
     <div className={clsx([
-      'font-mono',
-      centered ? 'text-center p-1 -m-[0.5px]' : 'w-5/6 lg:w-4/6'
+      'font-mono p-1 -m-[0.5px]',
+      centered ? 'text-center' : 'text-left'
     ])}>
       {/* Title */}
       {title && <h1 className="text-3xl font-extrabold tracking-tight md:text-5xl">{title}</h1>}

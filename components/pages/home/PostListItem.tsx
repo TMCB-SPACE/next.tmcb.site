@@ -3,6 +3,7 @@ import clsx from 'clsx'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import ImageBox from '@/components/shared/ImageBox'
+import { formatTimeSince } from '@/sanity/lib/utils'
 import type { ShowcasePost } from '@/types'
 
 interface PostProps {
@@ -12,8 +13,7 @@ interface PostProps {
 
 export function PostListItem(props: PostProps) {
   const { post, odd } = props
-  const formattedDate = new Date(post.publishedAt as string).toLocaleDateString('en-US')
-  const daysAgo = Math.floor((new Date().getTime() - new Date(post.publishedAt as string).getTime()) / (1000 * 3600 * 24))
+  const timeSince = formatTimeSince(post.publishedAt)
 
   return (
     <div
@@ -42,7 +42,7 @@ export function PostListItem(props: PostProps) {
       ])}>
         <p className={clsx([
           'font-mono text-sm leading-mono last:mb-0 mb-1 font-normal uppercase text-gray-dark'
-        ])}>{`${formattedDate} (${daysAgo < 1 ? 'today' : `${daysAgo} days ago`})`}</p>
+        ])}>{`${timeSince && `${timeSince.formattedDate} (about ${timeSince.timeSince})`}`}</p>
 
         <h2 className={clsx([
           'font-extrabold tracking-tight',
@@ -60,7 +60,11 @@ export function PostListItem(props: PostProps) {
               height={42}
               image={post.author?.coverImage}
               alt={`Cover image from ${post.author?.title?.replace(/[\u200B-\u200D\uFEFF]/g, '')}`}
-              classesWrapper='px-[0.5px] flex shrink-0 grow-0 w-[42px] relative rounded-full aspect-[1/1]'
+              classesWrapper={clsx([
+                'flex shrink-0 grow-0 w-[42px] relative rounded-full aspect-[1/1] object-cover border',
+                'border-slate-500',
+                'dark:border-black'
+              ])}
             />
           </div>
 

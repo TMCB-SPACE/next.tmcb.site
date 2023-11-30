@@ -104,6 +104,24 @@ export default defineType({
         defineArrayMember({
           type: 'block',
           marks: {
+            decorators: [
+              {
+                title: 'Italic',
+                value: 'em',
+              },
+              {
+                title: 'Strong',
+                value: 'strong',
+              },
+              {
+                title: 'Underline',
+                value: 'underline',
+              },
+              {
+                title: 'Strike',
+                value: 'strike-through',
+              },
+            ],
             annotations: [
               {
                 name: 'link',
@@ -119,7 +137,6 @@ export default defineType({
               },
             ],
           },
-          styles: [],
         }),
         // Custom blocks
         defineField({
@@ -149,6 +166,14 @@ export default defineType({
               description: 'Alternative text for screenreaders. Falls back on caption if not set',
             }),
           ],
+        }),
+        defineField({
+          title: 'Code with all options',
+          name: 'code',
+          type: 'code',
+          options: {
+            withFilename: true,
+          },
         }),
       ],
     }),

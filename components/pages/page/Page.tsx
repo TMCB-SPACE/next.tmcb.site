@@ -27,7 +27,7 @@ export function Page({ data }: PageProps) {
         <div className={clsx([
           'block -m-[0.5px] p-16'
         ])}>
-          {body && <CustomPortableText paragraphClasses='tracking-wide font-serif text-xl w-full max-w-[60rem] mx-auto py-2' value={body} />}
+          {body && <CustomPortableText paragraphClasses='tracking-wide font-serif text-xl w-full max-w-[60rem] mx-auto py-[0.5rem]' value={body} />}
         </div>
       </GeometricContainer>
     </>

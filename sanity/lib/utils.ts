@@ -17,14 +17,14 @@ export const urlForImage = (source: Image | undefined) => {
   return imageBuilder?.image(source).auto('format').fit('max')
 }
 
-export function urlForOpenGraphImage(image: Image | undefined) {
+export const urlForOpenGraphImage = (image: Image | undefined) => {
   return urlForImage(image)?.width(1200).height(627).fit('crop').url()
 }
 
-export function resolveHref(
+export const resolveHref = (
   documentType?: string,
   slug?: string,
-): string | undefined {
+): string | undefined => {
   switch (documentType) {
     case 'home':
       return '/'
@@ -40,4 +40,46 @@ export function resolveHref(
       console.warn('Invalid document type:', documentType)
       return undefined
   }
+}
+
+export const formatTimeSince = (dateTime?: string) => {
+  if (!dateTime) {
+    return ''
+  }
+
+  const formattedDate = new Date(dateTime as string).toLocaleDateString('en-US')
+  const dateDifference = new Date().getTime() - new Date(dateTime as string).getTime()
+  const yearsAgo = Math.floor(dateDifference / (1000 * 3600 * 24 * 365))
+  const monthsAgo = Math.floor(dateDifference / (1000 * 3600 * 24 * 30))
+  const daysAgo = Math.floor(dateDifference / (1000 * 3600 * 24))
+  const hoursAgo = Math.floor(dateDifference / (1000 * 3600))
+  const minutesAgo = Math.floor(dateDifference / (1000 * 60))
+  let timeSince = '';
+
+  switch (true) {
+    case yearsAgo > 0:
+      timeSince = `${yearsAgo} year${yearsAgo > 1 ? 's' : ''} ago`;
+      break;
+    case monthsAgo > 0:
+      timeSince = `${monthsAgo} month${monthsAgo > 1 ? 's' : ''} ago`;
+      break;
+    case daysAgo > 0:
+      timeSince = `${daysAgo} day${daysAgo > 1 ? 's' : ''} ago`;
+      break;
+    case hoursAgo > 0:
+      timeSince = `${hoursAgo} hour${hoursAgo > 1 ? 's' : ''} ago`;
+      break;
+    default:
+      timeSince = `${minutesAgo} minute${minutesAgo > 1 ? 's' : ''} ago`;
+      break;
+  }
+
+  return {
+    formattedDate,
+    timeSince,
+  };
+}
+
+export const textWithoutZerospace = (text?: string) => {
+  return text?.replace(/[\u200B-\u200D\uFEFF]/g, '') || ''
 }
