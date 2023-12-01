@@ -18,15 +18,16 @@ export function HighlightCode(props: HighlightCodeProps) {
         'dark:bg-neutral-800/90 dark:border-black',
       ])}>
         <figcaption className={clsx([
-          'bg-putty text-black dark:text-white border -mx-[1px] -mt-[1px] flex justify-between',
-          'dark:bg-charcoal '
+          '-mx-[1px] border-b -mt-[1px] flex justify-between p-0.5',
+          'text-black bg-neutral-300 border-slate-500',
+          'dark:text-stone-100 dark:bg-neutral-800 dark:border-black',
         ])}>
           <div className={clsx([
             'font-body text-base tracking-wide leading-normal font-normal normal-case py-[0.5rem] px-[0.5rem]'
           ])}>{language}</div>
 
           <button className={clsx([
-            'relative group/button inline-block -m-[1px] font-mono text-sm leading-mono font-normal uppercase'
+            'relative group/button inline-block -m-[1px] px-[0.5rem] font-mono text-sm leading-mono font-normal uppercase'
           ])}>
               <span
                 className='opacity-100 pointer-events-auto col-start-1 row-start-1 flex items-center justify-center'>
