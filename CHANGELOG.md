@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.8](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2023-12-01)
+
+
+### 🔁 Continuous Integration
+
+* test new vercel ignore build step ([e074e2c](https://github.com/TMCB-SPACE/next.tmcb.space/commit/e074e2c1bd9adb499b791e3a5353cd248bad99ca))
+
 ## [1.2.0-beta.7](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.6...v1.2.0-beta.7) (2023-11-30)
 
 
