@@ -18,6 +18,28 @@
 * add proper documentation and template link ([326d514](https://github.com/TMCB-SPACE/next.tmcb.space/commit/326d514135cdb4a56cb8ad2a9990faaf6aefd124)), closes [#4](https://github.com/TMCB-SPACE/next.tmcb.space/issues/4)
 
 
+### ✅ Tests
+
+* make docker build optional for now ([2d8ab25](https://github.com/TMCB-SPACE/next.tmcb.space/commit/2d8ab2560a79c451d99b6e9325f9e3ac2bf371b7))
+
+
+### 🤖 Build System
+
+* add docker build ([5a33b51](https://github.com/TMCB-SPACE/next.tmcb.space/commit/5a33b51611fc600d4ba76cbb462056763338ebf0))
+
+## [1.2.0-beta.10](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2023-12-19)
+
+
+### 🍕 Features
+
+* add missing license file ([009a902](https://github.com/TMCB-SPACE/next.tmcb.space/commit/009a90285668effe7a27b2f0d94008753c4c3410))
+
+
+### 🐛 Bug Fixes
+
+* add proper documentation and template link ([326d514](https://github.com/TMCB-SPACE/next.tmcb.space/commit/326d514135cdb4a56cb8ad2a9990faaf6aefd124)), closes [#4](https://github.com/TMCB-SPACE/next.tmcb.space/issues/4)
+
+
 ### 🤖 Build System
 
 * add docker build ([5a33b51](https://github.com/TMCB-SPACE/next.tmcb.space/commit/5a33b51611fc600d4ba76cbb462056763338ebf0))
