@@ -58,10 +58,6 @@ export default defineConfig({
     presentationTool({
       locate,
       previewUrl: {
-        origin:
-          typeof location === 'undefined'
-            ? 'http://localhost:3000'
-            : location.origin,
         draftMode: {
           enable: '/api/draft',
         },

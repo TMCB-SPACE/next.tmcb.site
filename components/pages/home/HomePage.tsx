@@ -1,4 +1,4 @@
-import { type EncodeDataAttributeCallback } from '@sanity/react-loader/rsc'
+import { type EncodeDataAttributeCallback } from '@sanity/react-loader'
 import clsx from 'clsx'
 import Link from 'next/link'
 
