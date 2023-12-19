@@ -5,6 +5,18 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.9](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.8...v1.2.0-beta.9) (2023-12-19)
+
+
+### 🍕 Features
+
+* upgrade nextjs to 14 and sanity components ([3d54673](https://github.com/TMCB-SPACE/next.tmcb.space/commit/3d54673989ea3365887054f7e47d7bc0146c11e8)), closes [#1](https://github.com/TMCB-SPACE/next.tmcb.space/issues/1)
+
+
+### 🐛 Bug Fixes
+
+* correct min-height on page slugs ([f0eba9e](https://github.com/TMCB-SPACE/next.tmcb.space/commit/f0eba9e0731bb9dd73d9cf36c6a08098e71e47dd))
+
 ## [1.2.0-beta.8](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.7...v1.2.0-beta.8) (2023-12-01)
 
 
