@@ -1,12 +1,12 @@
 {
   "name": "@tmcb/next.tmcb.space",
-  "version": "1.2.0-beta.9",
+  "version": "1.2.0-beta.10",
   "lockfileVersion": 3,
   "requires": true,
   "packages": {
     "": {
       "name": "@tmcb/next.tmcb.space",
-      "version": "1.2.0-beta.9",
+      "version": "1.2.0-beta.10",
       "hasInstallScript": true,
       "license": "MIT",
       "dependencies": {
