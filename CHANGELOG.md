@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.11](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2023-12-19)
+
+
+### 🔁 Continuous Integration
+
+* add deploy domain target url ([c8cb3a8](https://github.com/TMCB-SPACE/next.tmcb.space/commit/c8cb3a8855f579a93c2ada2f6e2d3991ddd6c8e8)), closes [#3](https://github.com/TMCB-SPACE/next.tmcb.space/issues/3)
+
 ## [1.2.0-beta.10](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.9...v1.2.0-beta.10) (2023-12-19)
 
 
