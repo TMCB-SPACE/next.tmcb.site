@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Post } from '@/components/pages/post/Post'
+import { PostPage } from '@/components/pages/post/PostPage'
 import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
 import { loadPost } from '@/sanity/loader/loadQuery'
 const PagePreview = dynamic(() => import('@/components/pages/page/PagePreview'))
@@ -37,5 +37,5 @@ export default async function PageSlugRoute({ params }: Props) {
     notFound()
   }
 
-  return <Post data={initial.data} />
+  return <PostPage data={initial.data} />
 }

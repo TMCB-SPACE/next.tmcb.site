@@ -6,7 +6,7 @@ import { pagesBySlugQuery } from '@/sanity/lib/queries'
 import { useQuery } from '@/sanity/loader/useQuery'
 import { PagePayload } from '@/types'
 
-import Post from './Post'
+import PostPage from './PostPage'
 
 type Props = {
   params: { slug: string }
@@ -19,5 +19,5 @@ export default function PostPreview(props: Props) {
     initial,
   })
 
-  return <Post data={data!} />
+  return <PostPage data={data!} />
 }

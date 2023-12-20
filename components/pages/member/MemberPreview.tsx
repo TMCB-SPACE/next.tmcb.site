@@ -6,7 +6,7 @@ import { membersBySlugQuery } from '@/sanity/lib/queries'
 import { useQuery } from '@/sanity/loader/useQuery'
 import { MemberPayload } from '@/types'
 
-import Member from './Member'
+import MemberPage from './MemberPage'
 
 type Props = {
   params: { slug: string }
@@ -19,5 +19,5 @@ export default function MemberPreview(props: Props) {
     initial,
   })
 
-  return <Member data={data!} />
+  return <MemberPage data={data!} />
 }

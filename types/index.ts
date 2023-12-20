@@ -1,6 +1,15 @@
 import type { PortableTextBlock } from '@portabletext/types'
 import type { Image } from 'sanity'
 
+export interface TeamMember {
+  _type: string
+  slug?: string
+  title?: string
+  role?: string
+  coverImage?: Image
+  overview?: PortableTextBlock[]
+}
+
 export interface MenuItem {
   _type: string
   slug?: string
@@ -49,11 +58,7 @@ export interface ShowcasePost {
   slug?: string
   publishedAt?: string
   categories?: string[]
-  author?: {
-    slug?: string
-    title?: string
-    coverImage?: Image
-  }
+  author?: TeamMember
   title?: string
 }
 
@@ -76,12 +81,7 @@ export interface PagePayload {
 }
 
 export interface PostPayload {
-  author?: {
-    _type: string
-    slug?: string
-    title?: string
-    coverImage?: Image
-  }
+  author?: TeamMember
   body?: PortableTextBlock[]
   categories?: string[]
   coverImage?: Image

@@ -13,7 +13,7 @@ export interface MemberProps {
   encodeDataAttribute?: EncodeDataAttributeCallback
 }
 
-export function Member({ data, encodeDataAttribute }: MemberProps) {
+export function MemberPage({ data, encodeDataAttribute }: MemberProps) {
   // Default to an empty object to allow previews on non-existent documents
   const { role, overview, title, shortName, coverImage } = data ?? {}
   const socialLinks = data?.socialLinks || ([] as SocialLink[])
@@ -84,4 +84,4 @@ export function Member({ data, encodeDataAttribute }: MemberProps) {
   )
 }
 
-export default Member
+export default MemberPage

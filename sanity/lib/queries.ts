@@ -48,6 +48,8 @@ export const postsBySlugQuery = groq`
       _type,
       "slug": slug.current,
       title,
+      role,
+      overview,
       coverImage,
     },
     body,

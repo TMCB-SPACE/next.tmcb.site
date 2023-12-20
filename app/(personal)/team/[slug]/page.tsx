@@ -4,7 +4,7 @@ import dynamic from 'next/dynamic'
 import { draftMode } from 'next/headers'
 import { notFound } from 'next/navigation'
 
-import { Member } from '@/components/pages/member/Member'
+import { MemberPage } from '@/components/pages/member/MemberPage'
 import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
 import { loadMember } from '@/sanity/loader/loadQuery'
 const PagePreview = dynamic(() => import('@/components/pages/page/PagePreview'))
@@ -37,5 +37,5 @@ export default async function PageSlugRoute({ params }: Props) {
     notFound()
   }
 
-  return <Member data={initial.data} />
+  return <MemberPage data={initial.data} />
 }
