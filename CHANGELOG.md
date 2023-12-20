@@ -5,6 +5,13 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.13](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2023-12-20)
+
+
+### 📝 Documentation
+
+* remove missing section ([bb3c937](https://github.com/TMCB-SPACE/next.tmcb.space/commit/bb3c9370738d12c67b12c43b023c1e2486090d7c))
+
 ## [1.2.0-beta.12](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2023-12-20)
 
 
