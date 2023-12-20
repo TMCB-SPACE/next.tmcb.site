@@ -55,9 +55,9 @@ export function PostListItem(props: PostProps) {
               width={42}
               height={42}
               image={post.author?.coverImage}
-              alt={`Cover image from ${post.author?.title?.replace(/[\u200B-\u200D\uFEFF]/g, '')}`}
+              alt={`Cover image from ${post.author?.title}`}
               classesWrapper={clsx([
-                'flex shrink-0 grow-0 w-[42px] relative rounded-full aspect-[1/1] object-cover border',
+                'flex shrink-0 grow-0 w-[42px] relative rounded-full aspect-square object-cover border',
                 'border-slate-500',
                 'dark:border-black',
               ])}

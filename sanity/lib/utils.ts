@@ -32,7 +32,7 @@ export const resolveHref = (documentType?: string, slug?: string): string | unde
     case 'post':
       return slug ? `/blog/${slug}` : undefined
     case 'member':
-      return slug ? `/author/${slug}` : undefined
+      return slug ? `/team/${slug}` : undefined
     default:
       console.warn('Invalid document type:', documentType)
       return undefined

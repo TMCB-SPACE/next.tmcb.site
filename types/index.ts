@@ -77,6 +77,7 @@ export interface PagePayload {
 
 export interface PostPayload {
   author?: {
+    _type: string
     slug?: string
     title?: string
     coverImage?: Image
@@ -103,6 +104,16 @@ export interface ProjectPayload {
   slug: string
   tags?: string[]
   title?: string
+}
+
+export interface MemberPayload {
+  title?: string
+  shortName?: string
+  role?: string
+  overview?: PortableTextBlock[]
+  coverImage?: Image
+  slug?: string
+  socialLinks?: SocialLink[]
 }
 
 export interface SettingsPayload {

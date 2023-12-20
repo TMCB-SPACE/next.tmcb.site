@@ -1,10 +1,11 @@
 import clsx from 'clsx'
+import Link from 'next/link'
 
 import { CustomPortableText } from '@/components/shared/CustomPortableText'
 import GeometricContainer from '@/components/shared/GeometricContainer'
 import { Header } from '@/components/shared/Header'
 import ImageBox from '@/components/shared/ImageBox'
-import { formatTimeSince } from '@/sanity/lib/utils'
+import { formatTimeSince, resolveHref } from '@/sanity/lib/utils'
 import type { PostPayload } from '@/types'
 
 export interface PostProps {
@@ -14,6 +15,7 @@ export interface PostProps {
 export function Post({ data }: PostProps) {
   const { body, publishedAt, title, author, categories } = data ?? {}
   const timeSince = formatTimeSince(publishedAt)
+  const authorHref = resolveHref(author?._type, author?.slug)
 
   return (
     <>
@@ -46,7 +48,10 @@ export function Post({ data }: PostProps) {
               </div>
 
               <div className="font-mono text-sm leading-mono font-normal uppercase text-gray-dark">
-                by {author?.title}
+                by{' '}
+                <Link className={clsx(['underline'])} href={authorHref ?? '#'}>
+                  {author?.title}
+                </Link>
                 {categories?.map((tag, key) => (
                   <span className="whitespace-nowrap" key={key}>
                     {' '}

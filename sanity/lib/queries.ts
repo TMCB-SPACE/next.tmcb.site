@@ -45,7 +45,8 @@ export const postsBySlugQuery = groq`
   *[_type == "post" && slug.current == $slug][0] {
     _id,
     author->{
-      slug,
+      _type,
+      "slug": slug.current,
       title,
       coverImage,
     },
@@ -71,6 +72,25 @@ export const projectBySlugQuery = groq`
     "slug": slug.current,
     tags,
     title,
+  }
+`
+
+export const membersBySlugQuery = groq`
+  *[_type == "member" && slug.current == $slug][0] {
+    _id,
+    title,
+    shortName,
+    role,
+    overview,
+    coverImage,
+    "slug": slug.current,
+    socialLinks[]{
+      _type,
+      title,
+      url,
+      tooltip,
+      "icon": icon.name
+    },
   }
 `
 

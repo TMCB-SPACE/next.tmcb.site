@@ -9,10 +9,11 @@ import {
   pagesBySlugQuery,
   postsBySlugQuery,
   projectBySlugQuery,
+  membersBySlugQuery,
   settingsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
-import { HomePagePayload, PagePayload, PostPayload, ProjectPayload, SettingsPayload } from '@/types'
+import { HomePagePayload, MemberPayload, PagePayload, PostPayload, ProjectPayload, SettingsPayload } from '@/types'
 
 const serverClient = client.withConfig({
   token,
@@ -74,4 +75,8 @@ export function loadPage(slug: string) {
 
 export function loadPost(slug: string) {
   return loadQuery<PostPayload | null>(postsBySlugQuery, { slug }, { next: { tags: [`post:${slug}`] } })
+}
+
+export function loadMember(slug: string) {
+  return loadQuery<MemberPayload | null>(membersBySlugQuery, { slug }, { next: { tags: [`member:${slug}`] } })
 }
