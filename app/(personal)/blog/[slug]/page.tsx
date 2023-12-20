@@ -13,17 +13,12 @@ type Props = {
   params: { slug: string }
 }
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const { data: page } = await loadPost(params.slug)
 
   return {
     title: page?.title,
-    description: page?.overview
-      ? toPlainText(page.overview)
-      : (await parent).description,
+    description: page?.overview ? toPlainText(page.overview) : (await parent).description,
   }
 }
 

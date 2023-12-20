@@ -1,12 +1,6 @@
 import { createClient } from '@sanity/client/stega'
 
-import {
-  apiVersion,
-  dataset,
-  projectId,
-  revalidateSecret,
-  studioUrl,
-} from '@/sanity/lib/api'
+import { apiVersion, dataset, projectId, revalidateSecret, studioUrl } from '@/sanity/lib/api'
 
 export const client = createClient({
   projectId,

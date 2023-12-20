@@ -8,10 +8,7 @@ import { token } from '@/sanity/lib/token'
 const clientWithToken = client.withConfig({ token })
 
 export async function GET(request: Request) {
-  const { isValid, redirectTo = '/' } = await validatePreviewUrl(
-    clientWithToken,
-    request.url,
-  )
+  const { isValid, redirectTo = '/' } = await validatePreviewUrl(clientWithToken, request.url)
   if (!isValid) {
     return new Response('Invalid secret', { status: 401 })
   }

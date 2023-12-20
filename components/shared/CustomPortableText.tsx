@@ -15,8 +15,8 @@ export function CustomPortableText({
 }) {
   const components: PortableTextComponents = {
     list: {
-      bullet: ({children}) => <ul className="mt-xl list-disc">{children}</ul>,
-      number: ({children}) => <ol className="mt-lg list-decimal">{children}</ol>,
+      bullet: ({ children }) => <ul className="mt-xl list-disc">{children}</ul>,
+      number: ({ children }) => <ol className="mt-lg list-decimal">{children}</ol>,
     },
     block: {
       normal: ({ children }) => {
@@ -41,48 +41,28 @@ export function CustomPortableText({
         return <h6 className="text-base font-serif font-bold">{children}</h6>
       },
       blockquote: ({ children }) => {
-        return (
-          <blockquote className="border-l-4 border-neutral-500 pl-1">
-            {children}
-          </blockquote>
-        )
+        return <blockquote className="border-l-4 border-neutral-500 pl-1">{children}</blockquote>
       },
     },
     marks: {
       link: ({ children, value }) => {
         return (
-          <a
-            className="underline transition hover:opacity-50"
-            href={value?.href}
-            rel="noreferrer noopener"
-          >
+          <a className="underline transition hover:opacity-50" href={value?.href} rel="noreferrer noopener">
             {children}
           </a>
         )
       },
-      em: ({children}) => <em className="text-gray-600 font-semibold">{children}</em>,
-      strong: ({children}) => <strong className="font-semibold">{children}</strong>,
-      strikeThrough: ({children}) => <del className="line-through">{children}</del>,
-      underline: ({children}) => <u className="underline">{children}</u>,
+      em: ({ children }) => <em className="text-gray-600 font-semibold">{children}</em>,
+      strong: ({ children }) => <strong className="font-semibold">{children}</strong>,
+      strikeThrough: ({ children }) => <del className="line-through">{children}</del>,
+      underline: ({ children }) => <u className="underline">{children}</u>,
     },
     types: {
-      image: ({
-        value,
-      }: {
-        value: Image & { alt?: string; caption?: string }
-      }) => {
+      image: ({ value }: { value: Image & { alt?: string; caption?: string } }) => {
         return (
           <div className="my-1 space-y-1 max-w-[60rem] mx-auto">
-            <ImageBox
-              image={value}
-              alt={value.alt}
-              classesWrapper="relative aspect-[16/9]"
-            />
-            {value?.caption && (
-              <div className="font-sans text-sm text-gray-600">
-                {value.caption}
-              </div>
-            )}
+            <ImageBox image={value} alt={value.alt} classesWrapper="relative aspect-[16/9]" />
+            {value?.caption && <div className="font-sans text-sm text-gray-600">{value.caption}</div>}
           </div>
         )
       },
@@ -93,9 +73,7 @@ export function CustomPortableText({
       code: ({ value }) => {
         const { code, language } = value || {}
 
-        return (
-          <HighlightCode code={code} language={language} />
-        )
+        return <HighlightCode code={code} language={language} />
       },
     },
   }

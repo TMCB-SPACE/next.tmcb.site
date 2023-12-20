@@ -18,27 +18,20 @@ export function Post({ data }: PostProps) {
   return (
     <>
       <GeometricContainer>
-        <div className={clsx([
-          'p-16 relative w-full-1 overflow-hidden',
-          'bg-neutral-100/90',
-          'dark:bg-neutral-900/90',
-        ])}>
-          <div className={clsx([
-            'max-w-[60rem] mx-auto [text-wrap:pretty]',
-            'tracking-wide font-serif text-xl'
-          ])}>
-            <p className={clsx([
-              'font-mono text-sm leading-mono last:mb-0 mb-1 px-1 font-normal uppercase text-gray-dark',
-            ])}>{`${timeSince && `${timeSince.formattedDate} (about ${timeSince.timeSince})`}`}</p>
+        <div
+          className={clsx(['p-16 relative w-full-1 overflow-hidden', 'bg-neutral-100/90', 'dark:bg-neutral-900/90'])}
+        >
+          <div className={clsx(['max-w-[60rem] mx-auto [text-wrap:pretty]', 'tracking-wide font-serif text-xl'])}>
+            <p
+              className={clsx([
+                'font-mono text-sm leading-mono last:mb-0 mb-1 px-1 font-normal uppercase text-gray-dark',
+              ])}
+            >{`${timeSince && `${timeSince.formattedDate} (about ${timeSince.timeSince})`}`}</p>
 
             <Header title={title} />
 
-            <div className={clsx([
-              'flex gap-[1rem] flex-row items-center px-1',
-            ])}>
-              <div className={clsx([
-                'w-[42px]',
-              ])}>
+            <div className={clsx(['flex gap-[1rem] flex-row items-center px-1'])}>
+              <div className={clsx(['w-[42px]'])}>
                 <ImageBox
                   width={42}
                   height={42}
@@ -47,21 +40,23 @@ export function Post({ data }: PostProps) {
                   classesWrapper={clsx([
                     'flex shrink-0 grow-0 w-[42px] relative rounded-full aspect-[1/1] object-cover border',
                     'border-slate-500 hover:border-slate-800 focus-visible:border-slate-800',
-                    'dark:border-black dark:hover:border-neutral-700 dark:focus-visible:border-neutral-700'
+                    'dark:border-black dark:hover:border-neutral-700 dark:focus-visible:border-neutral-700',
                   ])}
                 />
               </div>
 
-              <div className='font-mono text-sm leading-mono font-normal uppercase text-gray-dark'>
-                by {author?.title}{categories?.map((tag, key) => (
-                <span className='whitespace-nowrap' key={key}> • {tag}</span>
-              ))}
+              <div className="font-mono text-sm leading-mono font-normal uppercase text-gray-dark">
+                by {author?.title}
+                {categories?.map((tag, key) => (
+                  <span className="whitespace-nowrap" key={key}>
+                    {' '}
+                    • {tag}
+                  </span>
+                ))}
               </div>
             </div>
 
-            <hr className={clsx([
-              'border-neutral-300 dark:border-neutral-700 my-2 first:mt-0'
-            ])} />
+            <hr className={clsx(['border-neutral-300 dark:border-neutral-700 my-2 first:mt-0'])} />
 
             {body && <CustomPortableText value={body} />}
           </div>

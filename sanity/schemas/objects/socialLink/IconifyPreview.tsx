@@ -1,21 +1,21 @@
-import {Icon} from '@iconify/react'
+import { Icon } from '@iconify/react'
 
 interface IconPreviewProps {
   icon: string
 }
 
-const IconifyPreview = ({icon}: IconPreviewProps) => {
+const IconifyPreview = ({ icon }: IconPreviewProps) => {
   if (!icon) return null
 
   return (
-      <Icon
-        icon={icon}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-        }}
-      />
+    <Icon
+      icon={icon}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}
+    />
   )
 }
 

@@ -12,13 +12,7 @@ import {
   settingsQuery,
 } from '@/sanity/lib/queries'
 import { token } from '@/sanity/lib/token'
-import {
-  HomePagePayload,
-  PagePayload,
-  PostPayload,
-  ProjectPayload,
-  SettingsPayload,
-} from '@/types'
+import { HomePagePayload, PagePayload, PostPayload, ProjectPayload, SettingsPayload } from '@/types'
 
 const serverClient = client.withConfig({
   token,
@@ -39,9 +33,7 @@ queryStore.setServerClient(serverClient)
 const usingCdn = serverClient.config().useCdn
 // Automatically handle draft mode
 export const loadQuery = ((query, params = {}, options = {}) => {
-  const {
-    perspective = draftMode().isEnabled ? 'previewDrafts' : 'published',
-  } = options
+  const { perspective = draftMode().isEnabled ? 'previewDrafts' : 'published' } = options
   // Don't cache by default
   let revalidate: NextFetchRequestConfig['revalidate'] = 0
   // If `next.tags` is set, and we're not using the CDN, then it's safe to cache
@@ -65,41 +57,21 @@ export const loadQuery = ((query, params = {}, options = {}) => {
  */
 
 export function loadSettings() {
-  return loadQuery<SettingsPayload>(
-    settingsQuery,
-    {},
-    { next: { tags: ['settings', 'home', 'page', 'project'] } },
-  )
+  return loadQuery<SettingsPayload>(settingsQuery, {}, { next: { tags: ['settings', 'home', 'page', 'project'] } })
 }
 
 export function loadHomePage() {
-  return loadQuery<HomePagePayload | null>(
-    homePageQuery,
-    {},
-    { next: { tags: ['home', 'project'] } },
-  )
+  return loadQuery<HomePagePayload | null>(homePageQuery, {}, { next: { tags: ['home', 'project'] } })
 }
 
 export function loadProject(slug: string) {
-  return loadQuery<ProjectPayload | null>(
-    projectBySlugQuery,
-    { slug },
-    { next: { tags: [`project:${slug}`] } },
-  )
+  return loadQuery<ProjectPayload | null>(projectBySlugQuery, { slug }, { next: { tags: [`project:${slug}`] } })
 }
 
 export function loadPage(slug: string) {
-  return loadQuery<PagePayload | null>(
-    pagesBySlugQuery,
-    { slug },
-    { next: { tags: [`page:${slug}`] } },
-  )
+  return loadQuery<PagePayload | null>(pagesBySlugQuery, { slug }, { next: { tags: [`page:${slug}`] } })
 }
 
 export function loadPost(slug: string) {
-  return loadQuery<PostPayload | null>(
-    postsBySlugQuery,
-    { slug },
-    { next: { tags: [`post:${slug}`] } },
-  )
+  return loadQuery<PostPayload | null>(postsBySlugQuery, { slug }, { next: { tags: [`post:${slug}`] } })
 }

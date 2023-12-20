@@ -15,16 +15,7 @@ export interface ProjectPageProps {
 
 export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   // Default to an empty object to allow previews on non-existent documents
-  const {
-    client,
-    coverImage,
-    description,
-    duration,
-    overview,
-    site,
-    tags,
-    title,
-  } = data ?? {}
+  const { client, coverImage, description, duration, overview, site, tags, title } = data ?? {}
 
   const startYear = new Date(duration?.start!).getFullYear()
   const endYear = duration?.end ? new Date(duration?.end).getFullYear() : 'Now'
@@ -32,17 +23,13 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
   return (
     <>
       <GeometricContainer>
-        <div className={clsx([
-          'p-16'
-        ])}>
+        <div className={clsx(['p-16'])}>
           <Header centered title={title} description={overview} />
         </div>
       </GeometricContainer>
 
       <GeometricContainer>
-        <div className={clsx([
-          'block -m-[0.5px] p-16 min-h-[40vh]'
-        ])}>
+        <div className={clsx(['block -m-[0.5px] p-16 min-h-[40vh]'])}>
           <div className="rounded-md border">
             {/* Image  */}
             <ImageBox
@@ -59,13 +46,9 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
                 <div className="p-1">
                   <div className="text-xs md:text-sm">Duration</div>
                   <div className="text-md md:text-lg">
-                  <span data-sanity={encodeDataAttribute?.('duration.start')}>
-                    {startYear}
-                  </span>
+                    <span data-sanity={encodeDataAttribute?.('duration.start')}>{startYear}</span>
                     {' - '}
-                    <span data-sanity={encodeDataAttribute?.('duration.end')}>
-                    {endYear}
-                  </span>
+                    <span data-sanity={encodeDataAttribute?.('duration.end')}>{endYear}</span>
                   </div>
                 </div>
               )}
@@ -83,11 +66,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
                 <div className="p-1">
                   <div className="text-xs md:text-sm">Site</div>
                   {site && (
-                    <Link
-                      target="_blank"
-                      className="text-md break-words md:text-lg"
-                      href={site}
-                    >
+                    <Link target="_blank" className="text-md break-words md:text-lg" href={site}>
                       {site}
                     </Link>
                   )}
@@ -111,10 +90,13 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
       </GeometricContainer>
 
       <GeometricContainer>
-        <div className={clsx([
-          'block -m-[0.5px] p-16'
-        ])}>
-          {description && <CustomPortableText paragraphClasses='tracking-wide font-serif text-xl w-full max-w-[60rem] mx-auto py-[0.5rem]' value={description} />}
+        <div className={clsx(['block -m-[0.5px] p-16'])}>
+          {description && (
+            <CustomPortableText
+              paragraphClasses="tracking-wide font-serif text-xl w-full max-w-[60rem] mx-auto py-[0.5rem]"
+              value={description}
+            />
+          )}
         </div>
       </GeometricContainer>
     </>

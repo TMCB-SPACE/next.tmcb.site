@@ -9,26 +9,19 @@ import { urlForOpenGraphImage } from '@/sanity/lib/utils'
 import { generateStaticSlugs } from '@/sanity/loader/generateStaticSlugs'
 import { loadProject } from '@/sanity/loader/loadQuery'
 
-const ProjectPreview = dynamic(
-  () => import('@/components/pages/project/ProjectPreview'),
-)
+const ProjectPreview = dynamic(() => import('@/components/pages/project/ProjectPreview'))
 
 type Props = {
   params: { slug: string }
 }
 
-export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata,
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
   const { data: project } = await loadProject(params.slug)
   const ogImage = urlForOpenGraphImage(project?.coverImage)
 
   return {
     title: project?.title,
-    description: project?.overview
-      ? toPlainText(project.overview)
-      : (await parent).description,
+    description: project?.overview ? toPlainText(project.overview) : (await parent).description,
     openGraph: ogImage
       ? {
           images: [ogImage, ...((await parent).openGraph?.images || [])],

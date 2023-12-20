@@ -1,8 +1,4 @@
-import {
-  type QueryParams,
-  type QueryResponseInitial,
-  type UseQueryOptions,
-} from '@sanity/react-loader'
+import { type QueryParams, type QueryResponseInitial, type UseQueryOptions } from '@sanity/react-loader'
 import * as queryStore from '@sanity/react-loader'
 
 import { SettingsPayload } from '@/types'
@@ -11,10 +7,7 @@ import { settingsQuery } from '../lib/queries'
 /**
  * Exports to be used in client-only or components that render both server and client
  */
-export const useQuery = <
-  QueryResponseResult = unknown,
-  QueryResponseError = unknown,
->(
+export const useQuery = <QueryResponseResult = unknown, QueryResponseError = unknown>(
   query: string,
   params?: QueryParams,
   options?: UseQueryOptions<QueryResponseResult>,

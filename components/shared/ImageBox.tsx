@@ -21,23 +21,12 @@ export default function ImageBox({
   classesWrapper,
   ...props
 }: ImageBoxProps) {
-  const imageUrl =
-    image && urlForImage(image)?.height(height).width(width).fit('crop').url()
+  const imageUrl = image && urlForImage(image)?.height(height).width(width).fit('crop').url()
 
   return (
-    <div
-      className={`w-full overflow-hidden rounded-[3px] ${classesWrapper}`}
-      data-sanity={props['data-sanity']}
-    >
+    <div className={`w-full overflow-hidden rounded-[3px] ${classesWrapper}`} data-sanity={props['data-sanity']}>
       {imageUrl && (
-        <Image
-          className="absolute h-full w-full"
-          alt={alt}
-          width={width}
-          height={height}
-          sizes={size}
-          src={imageUrl}
-        />
+        <Image className="absolute h-full w-full" alt={alt} width={width} height={height} sizes={size} src={imageUrl} />
       )}
     </div>
   )

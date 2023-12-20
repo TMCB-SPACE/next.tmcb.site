@@ -24,9 +24,7 @@ import settings from '@/sanity/schemas/singletons/settings'
 import socialLink from '@/sanity/schemas/objects/socialLink'
 import { iconify } from 'sanity-plugin-iconify'
 
-const title =
-  process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE ||
-  'Next.js Personal Website with Sanity.io'
+const title = process.env.NEXT_PUBLIC_SANITY_PROJECT_TITLE || 'Next.js Personal Website with Sanity.io'
 
 export default defineConfig({
   basePath: studioUrl,

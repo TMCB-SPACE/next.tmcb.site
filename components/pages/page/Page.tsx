@@ -16,18 +16,19 @@ export function Page({ data }: PageProps) {
   return (
     <>
       <GeometricContainer>
-        <div className={clsx([
-          'p-16'
-        ])}>
+        <div className={clsx(['p-16'])}>
           <Header centered title={title} description={overview} />
         </div>
       </GeometricContainer>
 
       <GeometricContainer>
-        <div className={clsx([
-          'block -m-[0.5px] p-16 min-h-[40vh]'
-        ])}>
-          {body && <CustomPortableText paragraphClasses='tracking-wide font-serif text-xl w-full max-w-[60rem] mx-auto py-[0.5rem]' value={body} />}
+        <div className={clsx(['block -m-[0.5px] p-16 min-h-[40vh]'])}>
+          {body && (
+            <CustomPortableText
+              paragraphClasses="tracking-wide font-serif text-xl w-full max-w-[60rem] mx-auto py-[0.5rem]"
+              value={body}
+            />
+          )}
         </div>
       </GeometricContainer>
     </>

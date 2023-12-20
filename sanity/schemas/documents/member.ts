@@ -41,8 +41,7 @@ export default {
     }),
     defineField({
       name: 'overview',
-      description:
-        'Used both for the <meta> description tag for SEO, and team member header.',
+      description: 'Used both for the <meta> description tag for SEO, and team member header.',
       title: 'Overview',
       type: 'array',
       of: [
@@ -71,8 +70,7 @@ export default {
     defineField({
       name: 'coverImage',
       title: 'Cover Image',
-      description:
-        'This image will be used as the image for the team member.',
+      description: 'This image will be used as the image for the team member.',
       type: 'image',
       options: {
         hotspot: true,

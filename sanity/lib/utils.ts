@@ -21,10 +21,7 @@ export const urlForOpenGraphImage = (image: Image | undefined) => {
   return urlForImage(image)?.width(1200).height(627).fit('crop').url()
 }
 
-export const resolveHref = (
-  documentType?: string,
-  slug?: string,
-): string | undefined => {
+export const resolveHref = (documentType?: string, slug?: string): string | undefined => {
   switch (documentType) {
     case 'home':
       return '/'
@@ -54,30 +51,30 @@ export const formatTimeSince = (dateTime?: string) => {
   const daysAgo = Math.floor(dateDifference / (1000 * 3600 * 24))
   const hoursAgo = Math.floor(dateDifference / (1000 * 3600))
   const minutesAgo = Math.floor(dateDifference / (1000 * 60))
-  let timeSince = '';
+  let timeSince = ''
 
   switch (true) {
     case yearsAgo > 0:
-      timeSince = `${yearsAgo} year${yearsAgo > 1 ? 's' : ''} ago`;
-      break;
+      timeSince = `${yearsAgo} year${yearsAgo > 1 ? 's' : ''} ago`
+      break
     case monthsAgo > 0:
-      timeSince = `${monthsAgo} month${monthsAgo > 1 ? 's' : ''} ago`;
-      break;
+      timeSince = `${monthsAgo} month${monthsAgo > 1 ? 's' : ''} ago`
+      break
     case daysAgo > 0:
-      timeSince = `${daysAgo} day${daysAgo > 1 ? 's' : ''} ago`;
-      break;
+      timeSince = `${daysAgo} day${daysAgo > 1 ? 's' : ''} ago`
+      break
     case hoursAgo > 0:
-      timeSince = `${hoursAgo} hour${hoursAgo > 1 ? 's' : ''} ago`;
-      break;
+      timeSince = `${hoursAgo} hour${hoursAgo > 1 ? 's' : ''} ago`
+      break
     default:
-      timeSince = `${minutesAgo} minute${minutesAgo > 1 ? 's' : ''} ago`;
-      break;
+      timeSince = `${minutesAgo} minute${minutesAgo > 1 ? 's' : ''} ago`
+      break
   }
 
   return {
     formattedDate,
     timeSince,
-  };
+  }
 }
 
 export const textWithoutZerospace = (text?: string) => {
