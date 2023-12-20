@@ -5,6 +5,24 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.12](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.11...v1.2.0-beta.12) (2023-12-20)
+
+
+### 🍕 Features
+
+* add minimal team member display ([9383eeb](https://github.com/TMCB-SPACE/next.tmcb.space/commit/9383eeb170645fd000932ecdcb4740d67b7ae1c7))
+
+
+### 🐛 Bug Fixes
+
+* correct project description page ([b189eec](https://github.com/TMCB-SPACE/next.tmcb.space/commit/b189eec68de9795e8dae3817fddd52103fb49c12))
+* correct project listing hover ([db3416f](https://github.com/TMCB-SPACE/next.tmcb.space/commit/db3416f865ee2cfcaac8beb46c9fe0c7df7aa30f))
+
+
+### 🎨 Styles
+
+* use latest prettier lint ([8395c79](https://github.com/TMCB-SPACE/next.tmcb.space/commit/8395c7999ad7d0f7075166220b1bdf322327a53a))
+
 ## [1.2.0-beta.11](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.10...v1.2.0-beta.11) (2023-12-19)
 
 
