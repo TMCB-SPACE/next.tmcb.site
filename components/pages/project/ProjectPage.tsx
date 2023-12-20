@@ -29,21 +29,26 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
       </GeometricContainer>
 
       <GeometricContainer>
-        <div className={clsx(['block -m-[0.5px] p-16 min-h-[40vh]'])}>
-          <div className="rounded-md border">
+        <div className={clsx(['block -m-[0.5px] p-16'])}>
+          <div
+            className={clsx([
+              'border rounded-xl',
+              'bg-gray-100/90 border-slate-500',
+              'dark:bg-neutral-800/90 dark:border-black',
+            ])}
+          >
             {/* Image  */}
             <ImageBox
               data-sanity={encodeDataAttribute?.('coverImage')}
               image={coverImage}
-              // @TODO add alt field in schema
-              alt=""
-              classesWrapper="relative aspect-[16/9]"
+              alt={title}
+              classesWrapper="relative aspect-[16/9] rounded-t-xl"
             />
 
-            <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0">
+            <div className="divide-inherit grid grid-cols-1 divide-y lg:grid-cols-4 lg:divide-x lg:divide-y-0 dark:divide-black divide-slate-500 overflow-hidden">
               {/* Duration */}
               {!!(startYear && endYear) && (
-                <div className="p-1">
+                <div className="p-1 hover:bg-white dark:hover:bg-black lg:rounded-bl-xl">
                   <div className="text-xs md:text-sm">Duration</div>
                   <div className="text-md md:text-lg">
                     <span data-sanity={encodeDataAttribute?.('duration.start')}>{startYear}</span>
@@ -55,7 +60,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
 
               {/* Client */}
               {client && (
-                <div className="p-1">
+                <div className="p-1 hover:bg-white dark:hover:bg-black">
                   <div className="text-xs md:text-sm">Client</div>
                   <div className="text-md md:text-lg">{client}</div>
                 </div>
@@ -63,7 +68,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
 
               {/* Site */}
               {site && (
-                <div className="p-1">
+                <div className="p-1 hover:bg-white dark:hover:bg-black">
                   <div className="text-xs md:text-sm">Site</div>
                   {site && (
                     <Link target="_blank" className="text-md break-words md:text-lg" href={site}>
@@ -74,7 +79,7 @@ export function ProjectPage({ data, encodeDataAttribute }: ProjectPageProps) {
               )}
 
               {/* Tags */}
-              <div className="p-1">
+              <div className="p-1 hover:bg-white dark:hover:bg-black rounded-b-xl lg:rounded-b-none lg:rounded-br-xl">
                 <div className="text-xs md:text-sm">Tags</div>
                 <div className="text-md flex flex-row flex-wrap md:text-lg">
                   {tags?.map((tag, key) => (
