@@ -109,10 +109,6 @@ For any other npm based project or dotnpmrc defaulting to `--yes`:
 npx -y @tmcb/conventional-commit
 ```
 
-## 🎦 Repository Visualization
-
-[![Visualization of this repository](./public/diagram.svg)](./app)
-
 ## ⚖️ LICENSE
 
 MIT © [TED (Teodor-Eugen Dutulescu) Vortex](./LICENSE)
