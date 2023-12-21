@@ -2,6 +2,7 @@ import createImageUrlBuilder from '@sanity/image-url'
 import type { Image } from 'sanity'
 
 import { dataset, projectId } from '@/sanity/lib/api'
+import { PortableTextBlock } from '@portabletext/types'
 
 const imageBuilder = createImageUrlBuilder({
   projectId: projectId || '',
@@ -79,4 +80,22 @@ export const formatTimeSince = (dateTime?: string) => {
 
 export const textWithoutZerospace = (text?: string) => {
   return text?.replace(/[\u200B-\u200D\uFEFF]/g, '') || ''
+}
+
+export const blocksToText = (blocks: PortableTextBlock[] | undefined, opts = {}) => {
+  const options = Object.assign({}, { nonTextBehavior: 'remove' }, opts)
+
+  if (!blocks) {
+    return ''
+  }
+
+  return blocks
+    .map((block) => {
+      if (block._type !== 'block' || !block.children) {
+        return options.nonTextBehavior === 'remove' ? '' : `[${block._type} block]`
+      }
+
+      return block.children.map((child) => child.text.trim()).join('')
+    })
+    .join('\n\n')
 }

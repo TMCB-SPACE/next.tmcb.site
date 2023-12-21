@@ -26,6 +26,7 @@
         "react": "^18.2.0",
         "react-copy-to-clipboard": "^5.1.0",
         "react-dom": "^18.2.0",
+        "react-hook-reading-time": "^1.0.0",
         "react-syntax-highlighter": "^15.5.0",
         "react-toggle-dark-mode": "^1.1.1",
         "sanity": "^3.21.3",
@@ -10421,6 +10422,19 @@
         "@types/react": {
           "optional": true
         }
+      }
+    },
+    "node_modules/react-hook-reading-time": {
+      "version": "1.0.0",
+      "resolved": "https://registry.npmjs.org/react-hook-reading-time/-/react-hook-reading-time-1.0.0.tgz",
+      "integrity": "sha512-kIudDiGHCTzBlV95WM6xPN3EBUViQynJvcul/NL+8My6fsl0BeKoCi9Dp19g69PlyF3WLA3QAyjVL99+Ucgs6A==",
+      "engines": {
+        "node": ">=8",
+        "npm": ">=5"
+      },
+      "peerDependencies": {
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1"
       }
     },
     "node_modules/react-i18next": {
