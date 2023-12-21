@@ -5,6 +5,14 @@
 
 > All notable changes to this project will be documented in this file
 
+## [1.2.0-beta.14](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.13...v1.2.0-beta.14) (2023-12-21)
+
+
+### 🍕 Features
+
+* add estimated reading time indicator ([8e3e27f](https://github.com/TMCB-SPACE/next.tmcb.space/commit/8e3e27fe569611a8ce7cb81c73c5c72e27078c20))
+* add minimal post author display and links ([3ab7280](https://github.com/TMCB-SPACE/next.tmcb.space/commit/3ab72804a9e0cdd916ab0ba1b85b2b394400625f)), closes [#7](https://github.com/TMCB-SPACE/next.tmcb.space/issues/7)
+
 ## [1.2.0-beta.13](https://github.com/TMCB-SPACE/next.tmcb.space/compare/v1.2.0-beta.12...v1.2.0-beta.13) (2023-12-20)
 
 
